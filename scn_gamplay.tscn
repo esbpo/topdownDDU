@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://pqu0vx123oca" path="res://Assets/Tilesets/GroundTileset.png" id="1_w8qhu"]
 [ext_resource type="Texture2D" uid="uid://wduse8wsr3fk" path="res://Assets/PlayerModelHandgun.png" id="2_jt0fw"]
+[ext_resource type="Script" uid="uid://ctin03q426moe" path="res://Assets/Scripts/scr_Player.gd" id="2_t24il"]
+[ext_resource type="Texture2D" uid="uid://bicd58spc0xdk" path="res://icon.svg" id="4_t24il"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t24il"]
 texture = ExtResource("1_w8qhu")
@@ -22,12 +24,13 @@ radius = 8.5
 tile_set = SubResource("TileSet_ucokl")
 
 [node name="spr_Ground" type="Sprite2D" parent="." unique_id=1271545050]
-position = Vector2(-2243, -1720)
+position = Vector2(-2022, -1455)
 scale = Vector2(177.28125, 128.46875)
 texture = ExtResource("1_w8qhu")
 centered = false
 
 [node name="obj_Player" type="CharacterBody2D" parent="." unique_id=1232765853]
+script = ExtResource("2_t24il")
 
 [node name="col_PlayerCollider" type="CollisionShape2D" parent="obj_Player" unique_id=314141808]
 scale = Vector2(2, 2)
@@ -38,3 +41,7 @@ shape = SubResource("CircleShape2D_epa72")
 [node name="spr_PlayerSprite" type="Sprite2D" parent="obj_Player" unique_id=402597113]
 position = Vector2(0, -3)
 texture = ExtResource("2_jt0fw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=346408575]
+position = Vector2(231, -110)
+texture = ExtResource("4_t24il")
