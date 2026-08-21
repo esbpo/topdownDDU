@@ -1,3 +1,40 @@
 [gd_scene format=3 uid="uid://btwly707w3aes"]
 
+[ext_resource type="Texture2D" uid="uid://pqu0vx123oca" path="res://Assets/Tilesets/GroundTileset.png" id="1_w8qhu"]
+[ext_resource type="Texture2D" uid="uid://wduse8wsr3fk" path="res://Assets/PlayerModelHandgun.png" id="2_jt0fw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t24il"]
+texture = ExtResource("1_w8qhu")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ucokl"]
+sources/0 = SubResource("TileSetAtlasSource_t24il")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_epa72"]
+radius = 8.5
+
 [node name="Node2D" type="Node2D" unique_id=74920771]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=763523589]
+tile_set = SubResource("TileSet_ucokl")
+
+[node name="spr_Ground" type="Sprite2D" parent="." unique_id=1271545050]
+position = Vector2(-2243, -1720)
+scale = Vector2(177.28125, 128.46875)
+texture = ExtResource("1_w8qhu")
+centered = false
+
+[node name="obj_Player" type="CharacterBody2D" parent="." unique_id=1232765853]
+
+[node name="col_PlayerCollider" type="CollisionShape2D" parent="obj_Player" unique_id=314141808]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_epa72")
+
+[node name="cam_PlayerCamera" type="Camera2D" parent="obj_Player" unique_id=26764732]
+
+[node name="spr_PlayerSprite" type="Sprite2D" parent="obj_Player" unique_id=402597113]
+position = Vector2(0, -3)
+texture = ExtResource("2_jt0fw")
