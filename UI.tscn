@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bx86n2mwcig53"]
+
+[node name="Ui" type="Control" unique_id=510664376]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer_menu" type="MarginContainer" parent="." unique_id=2021020342]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+
+[node name="Button_menu" type="Button" parent="MarginContainer_menu" unique_id=1115498360]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="MarginContainer_info" type="MarginContainer" parent="." unique_id=1821882537]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer_info" unique_id=678661248]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label_time" type="Label" parent="MarginContainer_info/HBoxContainer" unique_id=585629910]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "00:00"
+
+[node name="Label_waveCount" type="Label" parent="MarginContainer_info/HBoxContainer" unique_id=1613759829]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Wave: 10"
+
+[node name="Label_remainingEnemies" type="Label" parent="MarginContainer_info/HBoxContainer" unique_id=1592010951]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Enemies left: 200"
+
+[node name="Button_statsMenu" type="Button" parent="MarginContainer_info/HBoxContainer" unique_id=586112928]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="MarginContainer_hp_xp-Bars" type="MarginContainer" parent="." unique_id=89738257]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer_hp_xp-Bars" unique_id=485660769]
+layout_mode = 2
+
+[node name="Slider_hpBar" type="HSlider" parent="MarginContainer_hp_xp-Bars/VBoxContainer" unique_id=463959575]
+custom_minimum_size = Vector2(600, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 0.0
+
+[node name="Slider_xpBar" type="HSlider" parent="MarginContainer_hp_xp-Bars/VBoxContainer" unique_id=1876238265]
+layout_mode = 2
