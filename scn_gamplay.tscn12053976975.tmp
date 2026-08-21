@@ -44,11 +44,12 @@ texture = ExtResource("2_jt0fw")
 
 [node name="obj_EnemyHandler" type="Node2D" parent="." unique_id=668097693]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="obj_EnemyHandler" unique_id=805579895]
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=805579895]
 position = Vector2(203, -76)
 script = ExtResource("3_jt0fw")
 shape = "square"
 sizeMult = 1.0
+speed = 10.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="obj_EnemyHandler/RigidBody2D" unique_id=382558575]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=382558575]
 shape = SubResource("RectangleShape2D_n5eui")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wduse8wsr3fk"
-path="res://.godot/imported/PlayerModelHandgun.png-987072eff63578bf600e01512acb7275.ctex"
+uid="uid://pqu0vx123oca"
+path="res://.godot/imported/GroundTileset.png-40d243997cd27f99778a745cddc3869e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PlayerModelHandgun.png"
-dest_files=["res://.godot/imported/PlayerModelHandgun.png-987072eff63578bf600e01512acb7275.ctex"]
+source_file="res://Assets/Textures/GroundTileset.png"
+dest_files=["res://.godot/imported/GroundTileset.png-40d243997cd27f99778a745cddc3869e.ctex"]
 
 [params]
 
