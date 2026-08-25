@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://pqu0vx123oca" path="res://Assets/Textures/GroundTileset.png" id="1_w8qhu"]
 [ext_resource type="Texture2D" uid="uid://wduse8wsr3fk" path="res://Assets/Textures/PlayerModelHandgun.png" id="2_jt0fw"]
 [ext_resource type="Script" uid="uid://ctin03q426moe" path="res://Assets/Scripts/scr_Player.gd" id="2_t24il"]
-[ext_resource type="Script" uid="uid://bhie0ag7mnqgb" path="res://Assets/Scripts/scr_EnemyScript.gd" id="3_jt0fw"]
+[ext_resource type="PackedScene" uid="uid://bx86n2mwcig53" path="res://UI.tscn" id="3_qts02"]
 [ext_resource type="Texture2D" uid="uid://bicd58spc0xdk" path="res://icon.svg" id="4_t24il"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t24il"]
@@ -19,15 +19,13 @@ sources/0 = SubResource("TileSetAtlasSource_t24il")
 [sub_resource type="CircleShape2D" id="CircleShape2D_epa72"]
 radius = 8.5
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5eui"]
-
 [node name="Node2D" type="Node2D" unique_id=74920771]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=763523589]
 tile_set = SubResource("TileSet_ucokl")
 
 [node name="spr_Ground" type="Sprite2D" parent="." unique_id=1271545050]
-position = Vector2(-2022, -1455)
+position = Vector2(-2054, -1498)
 scale = Vector2(177.28125, 128.46875)
 texture = ExtResource("1_w8qhu")
 centered = false
@@ -41,20 +39,13 @@ shape = SubResource("CircleShape2D_epa72")
 
 [node name="cam_PlayerCamera" type="Camera2D" parent="obj_Player" unique_id=26764732]
 
+[node name="Ui" parent="obj_Player/cam_PlayerCamera" unique_id=510664376 instance=ExtResource("3_qts02")]
+
 [node name="spr_PlayerSprite" type="Sprite2D" parent="obj_Player" unique_id=402597113]
 position = Vector2(0, -3)
 texture = ExtResource("2_jt0fw")
 
 [node name="obj_EnemyHandler" type="Node2D" parent="." unique_id=668097693]
-
-[node name="RigidBody2D" type="RigidBody2D" parent="obj_EnemyHandler" unique_id=805579895]
-position = Vector2(203, -76)
-script = ExtResource("3_jt0fw")
-shape = "square"
-sizeMult = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="obj_EnemyHandler/RigidBody2D" unique_id=382558575]
-shape = SubResource("RectangleShape2D_n5eui")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=346408575]
 position = Vector2(342, -97)
