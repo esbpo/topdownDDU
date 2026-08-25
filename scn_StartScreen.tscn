@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cfbrqwyujf0hv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6cw5p"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="root_StartScreen" type="Control" unique_id=682211393]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2138671516]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1452214531]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cw5p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6cw5p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6cw5p")
+action_mode = 0
+text = "Start"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=2079595486]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cw5p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6cw5p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6cw5p")
+action_mode = 0
+text = "Settings"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=552443187]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cw5p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6cw5p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6cw5p")
+action_mode = 0
+text = "Exit"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=162624456]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -328.0
+offset_right = 328.0
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 65
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1891623023]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 80
+text = "Geometry smash"

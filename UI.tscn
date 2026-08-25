@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dk8npe556jr67" path="res://Assets/Scripts/slider_xp_bar.gd" id="1_3b2b5"]
 [ext_resource type="Script" uid="uid://dwob0fsr0756x" path="res://Assets/Scripts/slider_hp_bar.gd" id="1_b3bc3"]
+[ext_resource type="Script" uid="uid://bu723hytfvlio" path="res://Assets/Scripts/scr_label_time.gd" id="1_g6l6n"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_t3gvo"]
 
@@ -57,6 +58,7 @@ theme_override_constants/margin_top = 30
 [node name="Button_menu" type="Button" parent="Ui/MarginContainer_menu" unique_id=1115498360]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+action_mode = 0
 
 [node name="MarginContainer_info" type="MarginContainer" parent="Ui" unique_id=1821882537]
 layout_mode = 1
@@ -77,6 +79,7 @@ theme_override_constants/separation = 10
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "00:00"
+script = ExtResource("1_g6l6n")
 
 [node name="Label_waveCount" type="Label" parent="Ui/MarginContainer_info/HBoxContainer" unique_id=1613759829]
 layout_mode = 2
@@ -115,7 +118,8 @@ theme_override_icons/grabber_disabled = SubResource("ImageTexture_fg1av")
 theme_override_icons/tick = SubResource("ImageTexture_xumpy")
 theme_override_styles/slider = SubResource("StyleBoxFlat_x48ik")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_bq707")
-value = 50.0
+max_value = 1000.0
+value = 500.0
 editable = false
 scrollable = false
 script = ExtResource("1_3b2b5")
@@ -130,7 +134,24 @@ theme_override_icons/grabber_disabled = SubResource("ImageTexture_p2v4t")
 theme_override_icons/tick = SubResource("ImageTexture_w1xjy")
 theme_override_styles/slider = SubResource("StyleBoxFlat_jph0e")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_frf8n")
-value = 50.0
+max_value = 1000.0
+value = 500.0
 editable = false
 scrollable = false
 script = ExtResource("1_b3bc3")
+
+[node name="MarginContainer_upgrades" type="MarginContainer" parent="Ui" unique_id=980551464]
+custom_minimum_size = Vector2(130, 0)
+custom_maximum_size = Vector2(130, 500)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Ui/MarginContainer_upgrades" unique_id=268403045]
+layout_mode = 2
+theme_override_constants/separation = 4
