@@ -3,7 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://pqu0vx123oca" path="res://Assets/Textures/GroundTileset.png" id="1_w8qhu"]
 [ext_resource type="Texture2D" uid="uid://wduse8wsr3fk" path="res://Assets/Textures/PlayerModelHandgun.png" id="2_jt0fw"]
 [ext_resource type="Script" uid="uid://ctin03q426moe" path="res://Assets/Scripts/scr_Player.gd" id="2_t24il"]
+
 [ext_resource type="Script" uid="uid://b2gomu5qputa8" path="res://temp.gd" id="4_qts02"]
+[ext_resource type="PackedScene" uid="uid://bx86n2mwcig53" path="res://UI.tscn" id="3_qts02"]
+
 [ext_resource type="Texture2D" uid="uid://bicd58spc0xdk" path="res://icon.svg" id="4_t24il"]
 [ext_resource type="PackedScene" uid="uid://rnfn875gb10t" path="res://scn_EnemyObj.tscn" id="5_qts02"]
 
@@ -26,7 +29,7 @@ radius = 8.5
 tile_set = SubResource("TileSet_ucokl")
 
 [node name="spr_Ground" type="Sprite2D" parent="." unique_id=1271545050]
-position = Vector2(-2022, -1455)
+position = Vector2(-2054, -1498)
 scale = Vector2(177.28125, 128.46875)
 texture = ExtResource("1_w8qhu")
 centered = false
@@ -40,6 +43,8 @@ scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_epa72")
 
 [node name="cam_PlayerCamera" type="Camera2D" parent="obj_Player" unique_id=26764732]
+
+[node name="Ui" parent="obj_Player/cam_PlayerCamera" unique_id=510664376 instance=ExtResource("3_qts02")]
 
 [node name="spr_PlayerSprite" type="Sprite2D" parent="obj_Player" unique_id=402597113]
 position = Vector2(0, -3)
