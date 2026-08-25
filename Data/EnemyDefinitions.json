@@ -6,6 +6,7 @@
 		"health": 10,
 		"speed": 50,
 		"damage": 1,
+		"size_multiplier": 1,
 		"spawn_multiplier": 1,
 		"abilities": null
 	},
@@ -16,8 +17,8 @@
 		"health": 20,
 		"speed": 70,
 		"damage": 2,
+		"size_multiplier": 1,
 		"spawn_multiplier": 1,
 		"abilities": null
 	},
-	
 ]

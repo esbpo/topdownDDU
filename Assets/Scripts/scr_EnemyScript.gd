@@ -1,22 +1,29 @@
 extends RigidBody2D
 
-var shape: String = "square"
-var sizeMult: float = 1
-var speed: float = 50
+var shape: String
+var sizeMult: float
+var speed: float
 @onready var player = $"../../obj_Player"
 var radius: int = 20
 
 func _ready() -> void:
-	var collisionShape: CollisionShape2D = $"col_EnemyCollision"
+	var collisionShape: CollisionShape2D = $col_EnemyCollision
 	match shape:
 		"square":
-			collisionShape.shape = RectangleShape2D.new()
-			collisionShape.scale = Vector2(sizeMult, sizeMult)
+			var form: RectangleShape2D = RectangleShape2D.new()
+			form.size = Vector2(sizeMult * radius, sizeMult * radius)
+			collisionShape.shape = form
+		"circle":
+			var form: CircleShape2D = CircleShape2D.new()
+			form.radius = radius * sizeMult
+			collisionShape.shape = form
 
 func _draw():
 	match shape:
 		"square":
 			draw_rect(Rect2(-radius/2.0, -radius/2.0, radius * sizeMult, radius * sizeMult), Color.HOT_PINK, true)
+		"circle":
+			draw_circle(Vector2(0, 0), radius * sizeMult, Color.RED, true)
 	
 func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	queue_redraw()

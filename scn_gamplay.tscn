@@ -3,12 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://pqu0vx123oca" path="res://Assets/Textures/GroundTileset.png" id="1_w8qhu"]
 [ext_resource type="Texture2D" uid="uid://wduse8wsr3fk" path="res://Assets/Textures/PlayerModelHandgun.png" id="2_jt0fw"]
 [ext_resource type="Script" uid="uid://ctin03q426moe" path="res://Assets/Scripts/scr_Player.gd" id="2_t24il"]
-
-[ext_resource type="Script" uid="uid://b2gomu5qputa8" path="res://temp.gd" id="4_qts02"]
 [ext_resource type="PackedScene" uid="uid://bx86n2mwcig53" path="res://UI.tscn" id="3_qts02"]
-
 [ext_resource type="Texture2D" uid="uid://bicd58spc0xdk" path="res://icon.svg" id="4_t24il"]
-[ext_resource type="PackedScene" uid="uid://rnfn875gb10t" path="res://scn_EnemyObj.tscn" id="5_qts02"]
+[ext_resource type="Script" uid="uid://872lpv7vjcir" path="res://Assets/Scripts/scr_EnemyHandler.gd" id="5_qts02"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t24il"]
 texture = ExtResource("1_w8qhu")
@@ -51,10 +48,7 @@ position = Vector2(0, -3)
 texture = ExtResource("2_jt0fw")
 
 [node name="obj_EnemyHandler" type="Node2D" parent="." unique_id=668097693]
-script = ExtResource("4_qts02")
-
-[node name="obj_Enemy" parent="obj_EnemyHandler" unique_id=507119321 instance=ExtResource("5_qts02")]
-position = Vector2(-400, -514)
+script = ExtResource("5_qts02")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=346408575]
 position = Vector2(342, -97)
