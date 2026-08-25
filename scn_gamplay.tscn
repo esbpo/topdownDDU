@@ -3,8 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://pqu0vx123oca" path="res://Assets/Textures/GroundTileset.png" id="1_w8qhu"]
 [ext_resource type="Texture2D" uid="uid://wduse8wsr3fk" path="res://Assets/Textures/PlayerModelHandgun.png" id="2_jt0fw"]
 [ext_resource type="Script" uid="uid://ctin03q426moe" path="res://Assets/Scripts/scr_Player.gd" id="2_t24il"]
-[ext_resource type="Script" uid="uid://bhie0ag7mnqgb" path="res://Assets/Scripts/scr_EnemyScript.gd" id="3_jt0fw"]
+[ext_resource type="Script" uid="uid://b2gomu5qputa8" path="res://temp.gd" id="4_qts02"]
 [ext_resource type="Texture2D" uid="uid://bicd58spc0xdk" path="res://icon.svg" id="4_t24il"]
+[ext_resource type="PackedScene" uid="uid://rnfn875gb10t" path="res://scn_EnemyObj.tscn" id="5_qts02"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t24il"]
 texture = ExtResource("1_w8qhu")
@@ -19,8 +20,6 @@ sources/0 = SubResource("TileSetAtlasSource_t24il")
 [sub_resource type="CircleShape2D" id="CircleShape2D_epa72"]
 radius = 8.5
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5eui"]
-
 [node name="Node2D" type="Node2D" unique_id=74920771]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=763523589]
@@ -33,6 +32,7 @@ texture = ExtResource("1_w8qhu")
 centered = false
 
 [node name="obj_Player" type="CharacterBody2D" parent="." unique_id=1232765853]
+motion_mode = 1
 script = ExtResource("2_t24il")
 
 [node name="col_PlayerCollider" type="CollisionShape2D" parent="obj_Player" unique_id=314141808]
@@ -46,15 +46,10 @@ position = Vector2(0, -3)
 texture = ExtResource("2_jt0fw")
 
 [node name="obj_EnemyHandler" type="Node2D" parent="." unique_id=668097693]
+script = ExtResource("4_qts02")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="obj_EnemyHandler" unique_id=805579895]
-position = Vector2(203, -76)
-script = ExtResource("3_jt0fw")
-shape = "square"
-sizeMult = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="obj_EnemyHandler/RigidBody2D" unique_id=382558575]
-shape = SubResource("RectangleShape2D_n5eui")
+[node name="obj_Enemy" parent="obj_EnemyHandler" unique_id=507119321 instance=ExtResource("5_qts02")]
+position = Vector2(-400, -514)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=346408575]
 position = Vector2(342, -97)

@@ -1,13 +1,13 @@
-extends Node2D
+extends RigidBody2D
 
-@export var shape: String
-@export var sizeMult: float
-var speed: float = 1
+var shape: String = "square"
+var sizeMult: float = 1
+var speed: float = 50
 @onready var player = $"../../obj_Player"
 var radius: int = 20
 
 func _ready() -> void:
-	var collisionShape: CollisionShape2D = $"CollisionShape2D"
+	var collisionShape: CollisionShape2D = $"col_EnemyCollision"
 	match shape:
 		"square":
 			collisionShape.shape = RectangleShape2D.new()
@@ -16,9 +16,13 @@ func _ready() -> void:
 func _draw():
 	match shape:
 		"square":
-			draw_rect(Rect2(position, Vector2(radius * sizeMult, radius * sizeMult)), Color.WHITE, false)
+			draw_rect(Rect2(-radius/2.0, -radius/2.0, radius * sizeMult, radius * sizeMult), Color.HOT_PINK, true)
 	
-func _process(_delta: float) -> void:
-	position.x = move_toward(position.x, player.position.x, speed)
-	position.y = move_toward(position.y, player.position.y, speed)
+func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	queue_redraw()
+	
+	var movement = (player.global_position - global_position).normalized() * speed
+	linear_velocity = movement
+	
+	var angle = global_position.angle_to_point(player.global_position) + PI/2
+	rotation = angle

@@ -4,11 +4,20 @@
 		"name": "BasicCube",
 		"shape": "square",
 		"health": 10,
-		"speed": 1,
+		"speed": 50,
 		"damage": 1,
 		"spawn_multiplier": 1,
 		"abilities": null
 	},
-	
+	{
+		"id": 1,
+		"name": "BasicCircle",
+		"shape": "circle",
+		"health": 20,
+		"speed": 70,
+		"damage": 2,
+		"spawn_multiplier": 1,
+		"abilities": null
+	},
 	
 ]
