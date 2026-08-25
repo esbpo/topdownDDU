@@ -3,10 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://pqu0vx123oca" path="res://Assets/Textures/GroundTileset.png" id="1_w8qhu"]
 [ext_resource type="Texture2D" uid="uid://wduse8wsr3fk" path="res://Assets/Textures/PlayerModelHandgun.png" id="2_jt0fw"]
 [ext_resource type="Script" uid="uid://ctin03q426moe" path="res://Assets/Scripts/scr_Player.gd" id="2_t24il"]
-
-[ext_resource type="Script" uid="uid://b2gomu5qputa8" path="res://temp.gd" id="4_qts02"]
 [ext_resource type="PackedScene" uid="uid://bx86n2mwcig53" path="res://UI.tscn" id="3_qts02"]
-
+[ext_resource type="Script" uid="uid://b2gomu5qputa8" path="res://Assets/Scripts/temp.gd" id="4_qts02"]
 [ext_resource type="Texture2D" uid="uid://bicd58spc0xdk" path="res://icon.svg" id="4_t24il"]
 [ext_resource type="PackedScene" uid="uid://rnfn875gb10t" path="res://scn_EnemyObj.tscn" id="5_qts02"]
 
