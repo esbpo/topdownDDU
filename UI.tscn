@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dk8npe556jr67" path="res://Assets/Scripts/slider_xp_bar.gd" id="1_3b2b5"]
 [ext_resource type="Script" uid="uid://dwob0fsr0756x" path="res://Assets/Scripts/slider_hp_bar.gd" id="1_b3bc3"]
 [ext_resource type="Script" uid="uid://bu723hytfvlio" path="res://Assets/Scripts/scr_label_time.gd" id="1_g6l6n"]
+[ext_resource type="Script" uid="uid://dna4ktiya1bmj" path="res://Assets/Scripts/scr_LabelRemainingEnemies.gd" id="2_qui0h"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_t3gvo"]
 
@@ -90,6 +91,7 @@ text = "Wave: 10"
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Enemies left: 200"
+script = ExtResource("2_qui0h")
 
 [node name="Button_statsMenu" type="Button" parent="Ui/MarginContainer_info/HBoxContainer" unique_id=586112928]
 custom_minimum_size = Vector2(50, 50)

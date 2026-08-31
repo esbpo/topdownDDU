@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ekt0tq7fj7cw"]
+
+[ext_resource type="Script" uid="uid://dm3spovqajhy3" path="res://Assets/Scripts/scr_BaseBullet.gd" id="1_jgld1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_epa72"]
+radius = 1.0
+height = 4.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_epa72"]
+
+[node name="ResBaseBullet" type="RigidBody2D" unique_id=144261534]
+script = ExtResource("1_jgld1")
+
+[node name="col_BulletCollider" type="CollisionShape2D" parent="." unique_id=1989616087]
+shape = SubResource("CapsuleShape2D_epa72")
+debug_color = Color(0, 0.6469958, 0.23087814, 0.41960785)
+
+[node name="spr_BaseBullet" type="Sprite2D" parent="." unique_id=491372195]
+position = Vector2(-1, -2)
+scale = Vector2(2, 4)
+texture = SubResource("PlaceholderTexture2D_epa72")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

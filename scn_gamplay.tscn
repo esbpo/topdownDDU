@@ -20,6 +20,9 @@ sources/0 = SubResource("TileSetAtlasSource_t24il")
 [sub_resource type="CircleShape2D" id="CircleShape2D_epa72"]
 radius = 8.5
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_n5eui"]
+radius = 250.0
+
 [node name="Node2D" type="Node2D" unique_id=74920771]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=763523589]
@@ -47,9 +50,17 @@ shape = SubResource("CircleShape2D_epa72")
 position = Vector2(0, -3)
 texture = ExtResource("2_jt0fw")
 
+[node name="area_PlayerMaxRange" type="Area2D" parent="obj_Player" unique_id=1288365693]
+
+[node name="col_PlayerMaxRange" type="CollisionShape2D" parent="obj_Player/area_PlayerMaxRange" unique_id=365288353]
+shape = SubResource("CircleShape2D_n5eui")
+
 [node name="obj_EnemyHandler" type="Node2D" parent="." unique_id=668097693]
 script = ExtResource("5_qts02")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=346408575]
 position = Vector2(342, -97)
 texture = ExtResource("4_t24il")
+
+[connection signal="body_entered" from="obj_Player/area_PlayerMaxRange" to="obj_Player" method="_on_area_player_max_range_body_entered"]
+[connection signal="body_exited" from="obj_Player/area_PlayerMaxRange" to="obj_Player" method="_on_area_player_max_range_body_exited"]

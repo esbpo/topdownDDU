@@ -5,9 +5,13 @@ var sizeMult: float
 var speed: float
 @onready var player = $"../../obj_Player"
 var radius: int = 20
+var health: float
+var damage: float
 
 func _ready() -> void:
 	var collisionShape: CollisionShape2D = $col_EnemyCollision
+	contact_monitor = true
+	max_contacts_reported = 10
 	match shape:
 		"square":
 			var form: RectangleShape2D = RectangleShape2D.new()
@@ -33,3 +37,12 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	
 	var angle = global_position.angle_to_point(player.global_position) + PI/2
 	rotation = angle
+
+func _process(_delta: float) -> void:
+	if health <= 0:
+		Globals.enemies_left -= 1
+		queue_free()
+
+func _on_body_entered(body: Node) -> void:
+	if body == $"/root/Node2D/obj_Player":
+		Globals.health -= damage
