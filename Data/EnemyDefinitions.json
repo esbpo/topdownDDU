@@ -24,12 +24,12 @@
 	{
 		"id": 2,
 		"name": "BasicArrow",
-		"shape": "arrow",
+		"shape": "triangle",
 		"health": 5,
 		"speed": 150,
 		"damage": 2,
-		"size_multiplier": 1,
-		"spawn_multiplier": 1,
+		"size_multiplier": 1.5,
+		"spawn_multiplier": 4,
 		"abilities": null
 	},
 ]

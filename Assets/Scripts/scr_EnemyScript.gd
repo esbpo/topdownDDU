@@ -28,7 +28,7 @@ func _ready() -> void:
 			var form: CircleShape2D = CircleShape2D.new()
 			form.radius = radius * sizeMult
 			collisionShape.shape = form	
-		"arrow":
+		"triangle":
 			var form: ConvexPolygonShape2D = load("res://Assets/Resources/res_TriangleCollider.tres")
 			collisionShape.shape = form
 			collisionShape.scale = Vector2(sizeMult, sizeMult)
@@ -42,8 +42,9 @@ func _draw():
 		"circle":
 			draw_circle(Vector2(0, 0), radius * sizeMult, Color.RED, false)
 			draw_circle(Vector2(0, 0), (radius-1) * sizeMult, Color.RED, false)
-		"arrow":
-			draw_polyline([Vector2(0,(radius/2.) * sizeMult),Vector2((radius / 4.) * sizeMult,0),Vector2((radius/2.) * sizeMult, (radius/2.) * sizeMult)], Color.AQUA, 2)
+		"triangle":
+			# Hardcoded because triangles...
+			draw_polyline([Vector2(-5 * sizeMult,3.33 * sizeMult), Vector2(0, -5 * sizeMult), Vector2(5 * sizeMult, 3.33 * sizeMult), Vector2(-5 * sizeMult,3.33 * sizeMult)], Color.AQUA, 2)
 			
 # Handles movement and rotation
 func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
