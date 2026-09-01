@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	if target:
 		angle = global_position.angle_to_point(target.global_position) + PI/2
 		rotation = angle
-		if shootingInterval >= 1:
+		if shootingInterval >= 0.2:
 			_shoot(baseBulletScene, (target.global_position - global_position).normalized() * 800)
 			shootingInterval = 0
 	else:

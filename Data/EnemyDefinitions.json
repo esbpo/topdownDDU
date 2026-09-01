@@ -21,4 +21,15 @@
 		"spawn_multiplier": 1,
 		"abilities": null
 	},
+	{
+		"id": 2,
+		"name": "BasicArrow",
+		"shape": "arrow",
+		"health": 5,
+		"speed": 150,
+		"damage": 2,
+		"size_multiplier": 1,
+		"spawn_multiplier": 1,
+		"abilities": null
+	},
 ]
