@@ -9,3 +9,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	value = Globals.xp
+
+	if value >= max_value:
+		value -= max_value
+		max_value *= 1.5
+		
