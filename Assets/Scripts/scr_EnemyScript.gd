@@ -8,7 +8,7 @@ var radius: int = 20
 var health: float
 var damage: float
 
-var exp: float = 0
+var experience: float = 0
 
 func _ready() -> void:
 	var collisionShape: CollisionShape2D = $col_EnemyCollision
@@ -16,7 +16,7 @@ func _ready() -> void:
 	max_contacts_reported = 10
 	
 	# Exp gained on kill
-	exp = health
+	experience = health
 	
 	match shape:
 		"square":
@@ -56,7 +56,7 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 func _process(_delta: float) -> void:
 	if health <= 0:
 		Globals.enemies_left -= 1
-		Globals.xp += exp
+		Globals.xp += experience
 		queue_free()
 
 func _on_body_entered(body: Node) -> void:
