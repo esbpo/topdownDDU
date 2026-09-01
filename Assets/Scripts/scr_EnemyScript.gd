@@ -7,10 +7,10 @@ var speed: float
 var radius: int = 20
 var health: float
 var damage: float
-
 var experience: float = 0
 
 func _ready() -> void:
+	# Collects the CollisionShape2D, enabled contact monitoring and sets the maximum number of reported collisions
 	var collisionShape: CollisionShape2D = $col_EnemyCollision
 	contact_monitor = true
 	max_contacts_reported = 10
@@ -18,6 +18,7 @@ func _ready() -> void:
 	# Exp gained on kill
 	experience = health
 	
+	# Gets the shape of the figure and assigns an appropriate collider in the correct size
 	match shape:
 		"square":
 			var form: RectangleShape2D = RectangleShape2D.new()
@@ -32,6 +33,7 @@ func _ready() -> void:
 			collisionShape.shape = form
 			collisionShape.scale = Vector2(sizeMult, sizeMult)
 
+# Draws the shape
 func _draw():
 	match shape:
 		"square":
@@ -43,22 +45,26 @@ func _draw():
 		"arrow":
 			draw_polyline([Vector2(0,(radius/2.) * sizeMult),Vector2((radius / 4.) * sizeMult,0),Vector2((radius/2.) * sizeMult, (radius/2.) * sizeMult)], Color.AQUA, 2)
 			
-	
+# Handles movement and rotation
 func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	queue_redraw()
 	
+	# Calculate the movement vector
 	var movement = (player.global_position - global_position).normalized() * speed
 	linear_velocity = movement
 	
+	# Calculate angle to player and rotate, add 90 degrees to rotate to correct position
 	var angle = global_position.angle_to_point(player.global_position) + PI/2
 	rotation = angle
 
 func _process(_delta: float) -> void:
+	# If enemy is dead, remove and add experience
 	if health <= 0:
 		Globals.enemies_left -= 1
 		Globals.xp += experience
 		queue_free()
 
+# If player hits the enemy, deal damage
 func _on_body_entered(body: Node) -> void:
 	if body == $"/root/Node2D/obj_Player":
 		Globals.health -= damage

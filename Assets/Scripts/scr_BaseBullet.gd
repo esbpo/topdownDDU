@@ -5,7 +5,8 @@ var time = 10
 
 func _ready() -> void:
 	contact_monitor = true
-	max_contacts_reported = 10
+	max_contacts_reported = 1
+	set_meta("bullet", true)
 
 func _process(delta: float) -> void:
 	time -= delta
