@@ -5,8 +5,6 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0aq04"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6cw5p"]
-
 [node name="ScnChooseUpgrade" type="Control" unique_id=340562716]
 layout_mode = 3
 anchors_preset = 15
@@ -72,8 +70,8 @@ layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_0aq04")
 
 [node name="mar_UpgradeEffect" type="MarginContainer" parent="HBox/MarginContainer_Upgrade1/Button/VBoxContainer" unique_id=1046254095]
-custom_minimum_size = Vector2(250, 150)
-custom_maximum_size = Vector2(250, 150)
+custom_minimum_size = Vector2(250, 125)
+custom_maximum_size = Vector2(250, 125)
 layout_mode = 2
 size_flags_horizontal = 4
 
@@ -84,28 +82,37 @@ layout_mode = 2
 size_flags_vertical = 0
 autowrap_mode = 2
 
-[node name="MarginContainer_Upgrade2" type="MarginContainer" parent="HBox" unique_id=361134855]
+[node name="MarginContainer_level" type="MarginContainer" parent="HBox/MarginContainer_Upgrade1/Button/VBoxContainer" unique_id=1980288635]
+custom_minimum_size = Vector2(0, 32)
+custom_maximum_size = Vector2(-1, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/MarginContainer_Upgrade1/Button/VBoxContainer/MarginContainer_level" unique_id=2035694250]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer_Upgrade2" type="MarginContainer" parent="HBox" unique_id=1101410763]
 custom_minimum_size = Vector2(300, 500)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="HBox/MarginContainer_Upgrade2" unique_id=240682959]
+[node name="Button" type="Button" parent="HBox/MarginContainer_Upgrade2" unique_id=1728297460]
 layout_mode = 2
 script = ExtResource("1_0aq04")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBox/MarginContainer_Upgrade2/Button" unique_id=1907987682]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBox/MarginContainer_Upgrade2/Button" unique_id=566451232]
 custom_minimum_size = Vector2(300, 500)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 20
 
-[node name="mar_UpgradeName" type="MarginContainer" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer" unique_id=1436763915]
+[node name="mar_UpgradeName" type="MarginContainer" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer" unique_id=167783188]
 custom_minimum_size = Vector2(100, 0)
 custom_maximum_size = Vector2(250, -1)
 layout_mode = 2
 theme_override_constants/margin_top = 30
 
-[node name="lbl_UpgradeTitle" type="Label" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer/mar_UpgradeName" unique_id=1668401568]
+[node name="lbl_UpgradeTitle" type="Label" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer/mar_UpgradeName" unique_id=504654681]
 custom_minimum_size = Vector2(250, 0)
 custom_maximum_size = Vector2(250, -1)
 layout_mode = 2
@@ -114,50 +121,59 @@ text = "Upgrade 1"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="mar_UpgradeIcon" type="MarginContainer" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer" unique_id=1687924728]
+[node name="mar_UpgradeIcon" type="MarginContainer" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer" unique_id=456045445]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="img_UpgradeIcon" type="TextureRect" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer/mar_UpgradeIcon" unique_id=668528806]
+[node name="img_UpgradeIcon" type="TextureRect" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer/mar_UpgradeIcon" unique_id=30224164]
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_6cw5p")
+texture = SubResource("PlaceholderTexture2D_0aq04")
 
-[node name="mar_UpgradeEffect" type="MarginContainer" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer" unique_id=1467574858]
-custom_minimum_size = Vector2(250, 150)
-custom_maximum_size = Vector2(250, 150)
+[node name="mar_UpgradeEffect" type="MarginContainer" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer" unique_id=735831931]
+custom_minimum_size = Vector2(250, 125)
+custom_maximum_size = Vector2(250, 125)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="lbl_UpgradeDescription" type="Label" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer/mar_UpgradeEffect" unique_id=122687868]
+[node name="lbl_UpgradeDescription" type="Label" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer/mar_UpgradeEffect" unique_id=1443010828]
 custom_minimum_size = Vector2(0, 150)
 custom_maximum_size = Vector2(-1, 150)
 layout_mode = 2
 size_flags_vertical = 0
 autowrap_mode = 2
 
-[node name="MarginContainer_Upgrade3" type="MarginContainer" parent="HBox" unique_id=1617546424]
+[node name="MarginContainer_level" type="MarginContainer" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer" unique_id=1266603006]
+custom_minimum_size = Vector2(0, 32)
+custom_maximum_size = Vector2(300, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer/MarginContainer_level" unique_id=2105064887]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer_Upgrade3" type="MarginContainer" parent="HBox" unique_id=1013424916]
 custom_minimum_size = Vector2(300, 500)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="HBox/MarginContainer_Upgrade3" unique_id=682608629]
+[node name="Button" type="Button" parent="HBox/MarginContainer_Upgrade3" unique_id=2072089291]
 layout_mode = 2
 script = ExtResource("1_0aq04")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBox/MarginContainer_Upgrade3/Button" unique_id=919239535]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBox/MarginContainer_Upgrade3/Button" unique_id=1260158638]
 custom_minimum_size = Vector2(300, 500)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 20
 
-[node name="mar_UpgradeName" type="MarginContainer" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer" unique_id=1365510490]
+[node name="mar_UpgradeName" type="MarginContainer" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer" unique_id=1938533659]
 custom_minimum_size = Vector2(100, 0)
 custom_maximum_size = Vector2(250, -1)
 layout_mode = 2
 theme_override_constants/margin_top = 30
 
-[node name="lbl_UpgradeTitle" type="Label" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer/mar_UpgradeName" unique_id=1981656378]
+[node name="lbl_UpgradeTitle" type="Label" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer/mar_UpgradeName" unique_id=440900188]
 custom_minimum_size = Vector2(250, 0)
 custom_maximum_size = Vector2(250, -1)
 layout_mode = 2
@@ -166,24 +182,33 @@ text = "Upgrade 1"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="mar_UpgradeIcon" type="MarginContainer" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer" unique_id=187433544]
+[node name="mar_UpgradeIcon" type="MarginContainer" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer" unique_id=836407577]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="img_UpgradeIcon" type="TextureRect" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer/mar_UpgradeIcon" unique_id=1233628311]
+[node name="img_UpgradeIcon" type="TextureRect" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer/mar_UpgradeIcon" unique_id=662910731]
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_6cw5p")
+texture = SubResource("PlaceholderTexture2D_0aq04")
 
-[node name="mar_UpgradeEffect" type="MarginContainer" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer" unique_id=960673089]
-custom_minimum_size = Vector2(250, 150)
-custom_maximum_size = Vector2(250, 150)
+[node name="mar_UpgradeEffect" type="MarginContainer" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer" unique_id=1088636062]
+custom_minimum_size = Vector2(250, 125)
+custom_maximum_size = Vector2(250, 125)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="lbl_UpgradeDescription" type="Label" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer/mar_UpgradeEffect" unique_id=734420707]
+[node name="lbl_UpgradeDescription" type="Label" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer/mar_UpgradeEffect" unique_id=621086860]
 custom_minimum_size = Vector2(0, 150)
 custom_maximum_size = Vector2(-1, 150)
 layout_mode = 2
 size_flags_vertical = 0
 autowrap_mode = 2
+
+[node name="MarginContainer_level" type="MarginContainer" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer" unique_id=1568830610]
+custom_minimum_size = Vector2(0, 32)
+custom_maximum_size = Vector2(300, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer/MarginContainer_level" unique_id=1451017054]
+layout_mode = 2
+alignment = 1
