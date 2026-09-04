@@ -3,6 +3,7 @@ extends Node2D
 # Enemy scene and json references
 @onready var enemyScene: PackedScene = preload("res://Assets/Resources/res_EnemyObj.tscn")
 @onready var enemyJson: String = FileAccess.get_file_as_string("res://Data/EnemyDefinitions.json")
+@onready var player: CharacterBody2D = $"../obj_Player"
 
 var enemyArray: Array
 
@@ -56,11 +57,19 @@ func SpawnGroup(enemyId: int, enemyCount: int):
 		
 		add_child(enemyInstance)
 		
-		enemyInstance.global_position = Vector2(randi_range(-1000, 1000), randi_range(-1000, 1000))
-		enemyInstance.contact_monitor = true
+		# Minimum and maximum distance from the player
+		var min_dist = 1000
+		var max_dist = 1400
 		
-		while !(enemyInstance.get_colliding_bodies().is_empty()):
-			enemyInstance.global_position = Vector2(randi_range(-1000, 1000), randi_range(-1000, 1000))
+		# Angle to spawn at
+		var spawn_angle = randf_range(0, 2*PI)
+		
+		var enemyPosition = player.global_position + Vector2(cos(spawn_angle) * randi_range(min_dist, max_dist), sin(spawn_angle) * randi_range(min_dist, max_dist))
+		enemyInstance.global_position = enemyPosition
+		
+		# Old code, no longer neccessary
+		#while !(enemyInstance.get_colliding_bodies().is_empty()):
+			#enemyInstance.global_position = Vector2(randi_range(-1000, 1000), randi_range(-1000, 1000))
 
 # Function to spawn a wave of enemies
 func SpawnWave(waveNumber):

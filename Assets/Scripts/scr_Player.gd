@@ -6,8 +6,10 @@ var target: RigidBody2D
 @onready var baseBulletScene = preload("res://Assets/Resources/res_BaseBullet.tscn")
 var angle: float
 var shootingInterval: float = 0
-@export var firerate: float = 50 # Firerate in shots/second
+@export var firerate: float = 5 # Firerate in shots/second
 
+
+# Movement start
 func GetInput():
 	var inputDirection = Input.get_vector("left", "right", "up", "down")
 	velocity = inputDirection * speed
@@ -15,6 +17,8 @@ func GetInput():
 func _physics_process(_delta):
 	GetInput()
 	move_and_slide()
+# Movement end
+
 
 # Shooting system
 
