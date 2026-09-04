@@ -4,6 +4,7 @@
 		"title": "Damage Up",
 		"damage": 0.2,
 		"level": 0,
+		"maxlevel": 5,
 		"description": "+ 20% Damage",
 		"icon": "res://Assets/Textures/Upgrade/upgradeFiller1.png"
 	},
@@ -12,6 +13,7 @@
 		"title": "Attack Speed Up",
 		"attackspeed": 0.1,
 		"level": 0,
+		"maxlevel": 5,
 		"description": "+ 10% Attack Speed",
 		"icon": "res://Assets/Textures/Upgrade/upgradeFiller2.png"
 	},
@@ -20,6 +22,7 @@
 		"title": "Health Up",
 		"health": 0.25,
 		"level": 0,
+		"maxlevel": 5,
 		"description": "+ 25% Health",
 		"icon": "res://Assets/Textures/Upgrade/upgradeFiller3.png"
 	},
@@ -28,7 +31,26 @@
 		"title": "Base Health Up",
 		"basehealth": 100,
 		"level": 0,
+		"maxlevel": 5,
 		"description": "+ 100 Base Health",
-		"icon": ""
+		"icon": "res://Assets/Textures/GroundTileset.png"
+	},
+	{
+		"id": 4,
+		"title": "Movement speed up",
+		"movementspeed": 0.15,
+		"level": 0,
+		"maxlevel": 5,
+		"description": "+ 15% movement speed",
+		"icon": "res://Assets/Textures/GroundTileset.png"
+	},
+	{
+		"id": 5,
+		"title": "Health regen",
+		"healthregen":5,
+		"level": 0,
+		"maxlevel": 3,
+		"description": "+ 5 health pr. second",
+		"icon": "res://Assets/Textures/GroundTileset.png"
 	},
 ]
