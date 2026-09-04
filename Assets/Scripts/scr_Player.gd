@@ -2,11 +2,16 @@ extends CharacterBody2D
 
 @export var speed: float = 200
 
-var target: RigidBody2D
+# Bullet scenes
 @onready var baseBulletScene = preload("res://Assets/Resources/res_BaseBullet.tscn")
+@onready var pierceBulletScene = preload("res://Assets/Resources/res_PierceBullet.tscn")
+@onready var truePierceBulletScene = preload("res://Assets/Resources/res_TruePierceBullet.tscn")
+@onready var spawnBulletScene = preload("res://Assets/Resources/res_SpawnBullet.tscn")
+
+var target: RigidBody2D
 var angle: float
 var shootingInterval: float = 0
-@export var firerate: float = 5 # Firerate in shots/second
+@export var firerate: float = 0.5 # Firerate in shots/second
 
 
 # Movement start
@@ -31,7 +36,19 @@ func _process(delta: float) -> void:
 		angle = global_position.angle_to_point(target.global_position) + PI/2
 		rotation = angle
 		if shootingInterval >= 1/firerate:
-			_shoot(baseBulletScene, (target.global_position - global_position).normalized() * 800)
+			
+			# BaseBullet
+			#_shoot(baseBulletScene, target, 800, 10, 10)
+			
+			# PierceBullet
+			#_shoot(pierceBulletScene, target, 800, 100, 10)
+			
+			# TruePierceBullet
+			#_shoot(truePierceBulletScene, target, 800, 1, 0.5, 40, 10)
+			
+			# SpawnBullet (Ball spawn)
+			_shoot(spawnBulletScene, target, 600, 10, 0.5, 1, 2, truePierceBulletScene, {"damage": 40,"movement": Vector2(),"lifetime": 100,"width": 150,"height": 150,"texture": PlaceholderTexture2D.new(),})
+			
 			shootingInterval = 0
 	else:
 		var mouse_position = get_global_mouse_position()
@@ -40,15 +57,32 @@ func _process(delta: float) -> void:
 
 	target = SelectNewTarget()
 	
-func _shoot(bulletScene: PackedScene, bulletVelocity: Vector2):
+func _shoot(bulletScene: PackedScene, bulletTarget: PhysicsBody2D, bulletSpeed: float, 
+			damage: float, lifetime: float, width: float, height: float, spawn: PackedScene=null, spawn_data: Dictionary={}):
 	var bulletInstance: RigidBody2D = bulletScene.instantiate()
+	var bulletVector: Vector2 = (bulletTarget.global_position - global_position).normalized() * bulletSpeed
+	var bulletData: Dictionary = {
+		"damage": damage,
+		"movement": bulletVector,
+		"lifetime": lifetime,
+		"width": width,
+		"height": height,
+		"texture": PlaceholderTexture2D.new(),
+		"spawn": spawn,
+		"spawn_data": spawn_data
+	}
+	
 	$"..".add_child(bulletInstance)
 	bulletInstance.rotation = angle
-	bulletInstance.linear_velocity = bulletVelocity
+	bulletInstance.linear_velocity = bulletVector
+	bulletInstance.data = bulletData
+	bulletInstance.LoadSelf()
 	
 	var collisionShape = $col_PlayerCollider
 	var playerGunPosition = Vector2((collisionShape.shape.radius+15)*cos(angle - PI/2),(collisionShape.shape.radius+15)*sin(angle - PI/2))
 	bulletInstance.global_position = global_position + playerGunPosition
+	bulletInstance.move_local_x(-width/2)
+	bulletInstance.move_local_y(-height)
 
 # Function to select new target
 func SelectNewTarget() -> RigidBody2D:

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cx67008lv8dll"]
+
+[ext_resource type="Script" uid="uid://oiy06u12oyb2" path="res://Assets/Scripts/Projectiles/scr_TruePierceBullet.gd" id="1_kn8hr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kn8hr"]
+radius = 1.0
+height = 2.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5fml3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wn6d8"]
+radius = 1.0
+height = 2.0
+
+[node name="ResTruePierceBullet" type="RigidBody2D" unique_id=2002531579]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_kn8hr")
+
+[node name="col_Bullet" type="CollisionShape2D" parent="." unique_id=569771689]
+shape = SubResource("CapsuleShape2D_kn8hr")
+
+[node name="spr_Bullet" type="Sprite2D" parent="." unique_id=689076270]
+position = Vector2(-1, -1)
+scale = Vector2(2, 2)
+texture = SubResource("PlaceholderTexture2D_5fml3")
+
+[node name="area_Collide" type="Area2D" parent="." unique_id=1947468396]
+
+[node name="col_Area" type="CollisionShape2D" parent="area_Collide" unique_id=1570204766]
+shape = SubResource("CapsuleShape2D_wn6d8")
+
+[connection signal="body_entered" from="area_Collide" to="." method="_on_body_entered"]

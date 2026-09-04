@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://ekt0tq7fj7cw"]
+[gd_scene format=3 uid="uid://ckmsl37h8ghh8"]
 
-[ext_resource type="Script" uid="uid://dm3spovqajhy3" path="res://Assets/Scripts/Projectiles/scr_BaseBullet.gd" id="1_jgld1"]
+[ext_resource type="Script" uid="uid://biw42o3uljw6e" path="res://Assets/Scripts/Projectiles/scr_SpawnBullet.gd" id="1_wv5v8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_epa72"]
 radius = 1.0
@@ -8,8 +8,8 @@ height = 2.0
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_epa72"]
 
-[node name="ResBaseBullet" type="RigidBody2D" unique_id=144261534]
-script = ExtResource("1_jgld1")
+[node name="ResSpawnBullet" type="RigidBody2D" unique_id=144261534]
+script = ExtResource("1_wv5v8")
 
 [node name="col_Bullet" type="CollisionShape2D" parent="." unique_id=1989616087]
 shape = SubResource("CapsuleShape2D_epa72")
