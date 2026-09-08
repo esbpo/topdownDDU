@@ -1,0 +1,24 @@
+[
+	{
+		"id": 0,
+		"firerate": 1,
+		"bulletspeed": 1200,
+		"damage": 10,
+		"width": 2,
+		"height": 4,
+		"type": "basic",
+		"lifetime": 1,
+		"texture": null
+	},
+	{
+		"id": 1,
+		"firerate": 5,
+		"bulletspeed": 1200,
+		"damage": 20,
+		"width": 2,
+		"height": 4,
+		"type": "basic",
+		"lifetime": 1,
+		"texture": null
+	},
+]

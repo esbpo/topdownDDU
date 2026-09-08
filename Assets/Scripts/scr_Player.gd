@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 		rotation = angle
 		if shootingInterval >= 1/firerate:
 			
-			# BaseBullet
+			
 			_shoot(baseBulletScene, target, 1200, 10, 10, 2, 4)
 			
 			# PierceBullet
