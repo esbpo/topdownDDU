@@ -65,4 +65,7 @@ func _pressed():
 			"movementspeed":
 				Globals.movement_speed_multiplier += data[key] #if movementspeed key is found, add key value to movement speed multiplier
 				break
+			"weapon_id":
+				$"/root/Node2D/obj_Player".Equip(data[key])
+				break
 	$"../../../..".HideUpgrades()

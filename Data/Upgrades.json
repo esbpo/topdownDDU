@@ -53,4 +53,13 @@
 		"description": "+ 5 health pr. second",
 		"icon": "res://Assets/Textures/GroundTileset.png"
 	},
+	{
+		"id": 6,
+		"title": "Assault rifle",
+		"weapon_id": 1,
+		"level": 0,
+		"maxlevel": 1,
+		"description": "Unlocks assault rifle",
+		"icon": "res://Assets/Textures/AbilityUpgradeBackground.png"
+	},
 ]
