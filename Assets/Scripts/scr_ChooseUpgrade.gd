@@ -15,8 +15,6 @@ func _ready() -> void:
 	image.texture = PlaceholderTexture2D.new()
 	description.text = "Stat: +/- x\nStat2: +/. x%"
 	
-	
-	
 func update():
 	data = get_meta("Data")
 	print(data)
@@ -66,3 +64,4 @@ func _pressed():
 			"movementspeed":
 				Globals.movement_speed_multiplier += data[key] #if movementspeed key is found, add key value to movement speed multiplier
 				break
+	$"../../../..".HideUpgrades()

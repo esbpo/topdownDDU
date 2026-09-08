@@ -35,6 +35,7 @@ custom_minimum_size = Vector2(300, 500)
 layout_mode = 2
 
 [node name="Button" type="Button" parent="HBox/MarginContainer_Upgrade1" unique_id=786222981]
+process_mode = 3
 layout_mode = 2
 script = ExtResource("1_0aq04")
 
@@ -49,6 +50,7 @@ theme_override_constants/separation = 20
 custom_minimum_size = Vector2(100, 0)
 custom_maximum_size = Vector2(250, -1)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/margin_top = 30
 
 [node name="lbl_UpgradeTitle" type="Label" parent="HBox/MarginContainer_Upgrade1/Button/VBoxContainer/mar_UpgradeName" unique_id=1250665504]
@@ -88,6 +90,7 @@ custom_maximum_size = Vector2(-1, 32)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBox/MarginContainer_Upgrade1/Button/VBoxContainer/MarginContainer_level" unique_id=2035694250]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 alignment = 1
 
@@ -96,6 +99,7 @@ custom_minimum_size = Vector2(300, 500)
 layout_mode = 2
 
 [node name="Button" type="Button" parent="HBox/MarginContainer_Upgrade2" unique_id=1728297460]
+process_mode = 3
 layout_mode = 2
 script = ExtResource("1_0aq04")
 
@@ -110,6 +114,7 @@ theme_override_constants/separation = 20
 custom_minimum_size = Vector2(100, 0)
 custom_maximum_size = Vector2(250, -1)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/margin_top = 30
 
 [node name="lbl_UpgradeTitle" type="Label" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer/mar_UpgradeName" unique_id=504654681]
@@ -149,6 +154,7 @@ custom_maximum_size = Vector2(300, 32)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer/MarginContainer_level" unique_id=2105064887]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 alignment = 1
 
@@ -157,6 +163,7 @@ custom_minimum_size = Vector2(300, 500)
 layout_mode = 2
 
 [node name="Button" type="Button" parent="HBox/MarginContainer_Upgrade3" unique_id=2072089291]
+process_mode = 3
 layout_mode = 2
 script = ExtResource("1_0aq04")
 
@@ -171,6 +178,7 @@ theme_override_constants/separation = 20
 custom_minimum_size = Vector2(100, 0)
 custom_maximum_size = Vector2(250, -1)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/margin_top = 30
 
 [node name="lbl_UpgradeTitle" type="Label" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer/mar_UpgradeName" unique_id=440900188]
@@ -210,5 +218,6 @@ custom_maximum_size = Vector2(300, 32)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer/MarginContainer_level" unique_id=1451017054]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 alignment = 1
