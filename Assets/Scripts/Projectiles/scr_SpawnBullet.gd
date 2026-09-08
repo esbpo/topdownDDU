@@ -46,8 +46,9 @@ func _on_body_entered(body: Node) -> void:
 		queue_free()
 		
 func SpawnSubBullet():
-	var subBullet = spawn.instantiate()
-	$"..".add_child(subBullet)
+	var subBullet: RigidBody2D = spawn.instantiate()
+	$"..".call_deferred("add_child", subBullet)
 	subBullet.global_position = global_position
+	subBullet.z_index = -1
 	subBullet.data = spawn_data
 	subBullet.LoadSelf()

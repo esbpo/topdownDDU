@@ -47,7 +47,7 @@ func _process(delta: float) -> void:
 			#_shoot(truePierceBulletScene, target, 800, 1, 0.5, 40, 10)
 			
 			# SpawnBullet (Ball spawn)
-			_shoot(spawnBulletScene, target, 600, 10, 0.5, 1, 2, truePierceBulletScene, {"damage": 40,"movement": Vector2(),"lifetime": 100,"width": 150,"height": 150,"texture": PlaceholderTexture2D.new(),})
+			_shoot(spawnBulletScene, target, 600, 10, 0.5, 1, 2, truePierceBulletScene, {"damage": 0,"movement": Vector2(),"lifetime": 100,"width": 150,"height": 150,"texture": PlaceholderTexture2D.new(), "damage_per_second": 5})
 			
 			shootingInterval = 0
 	else:

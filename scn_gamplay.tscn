@@ -7,16 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bicd58spc0xdk" path="res://icon.svg" id="4_t24il"]
 [ext_resource type="Script" uid="uid://872lpv7vjcir" path="res://Assets/Scripts/scr_EnemyHandler.gd" id="5_qts02"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t24il"]
-texture = ExtResource("1_w8qhu")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_ucokl"]
-sources/0 = SubResource("TileSetAtlasSource_t24il")
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_epa72"]
 radius = 8.5
 
@@ -25,10 +15,8 @@ radius = 300.0
 
 [node name="Node2D" type="Node2D" unique_id=74920771]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=763523589]
-tile_set = SubResource("TileSet_ucokl")
-
 [node name="spr_Ground" type="Sprite2D" parent="." unique_id=1271545050]
+z_index = -100
 position = Vector2(-2054, -1498)
 scale = Vector2(177.28125, 128.46875)
 texture = ExtResource("1_w8qhu")
