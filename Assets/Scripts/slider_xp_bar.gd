@@ -1,5 +1,5 @@
 extends HSlider
-
+@onready var LevelUp = $"/root/Node2D/can_LevelUp"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,5 +12,9 @@ func _process(_delta: float) -> void:
 
 	if value >= max_value:
 		value -= max_value
-		max_value *= 1.5
+		Globals.xp -= max_value
+		max_value *= 1.2
+		max_value = round(max_value)
+		LevelUp.ShowUpgrades()
+		
 		
