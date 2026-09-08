@@ -22,7 +22,7 @@ func LoadSelf() -> void:
 	set_meta("bullet", true)
 	
 	$col_Bullet.scale = Vector2(width, height) / 2
-	$spr_Bullet.scale = Vector2(width, height)
+	$spr_Bullet.scale *= Vector2(width, height)
 	$spr_Bullet.position = Vector2(-width/2., -height/2.)
 
 func _process(delta: float) -> void:

@@ -11,7 +11,7 @@ extends CharacterBody2D
 var target: RigidBody2D
 var angle: float
 var shootingInterval: float = 0
-@export var firerate: float = 0.5 # Firerate in shots/second
+@export var firerate: float = 1 # Firerate in shots/second
 
 
 # Movement start
@@ -38,7 +38,7 @@ func _process(delta: float) -> void:
 		if shootingInterval >= 1/firerate:
 			
 			# BaseBullet
-			#_shoot(baseBulletScene, target, 800, 10, 10)
+			_shoot(baseBulletScene, target, 1200, 10, 10, 2, 4)
 			
 			# PierceBullet
 			#_shoot(pierceBulletScene, target, 800, 100, 10)
@@ -47,7 +47,7 @@ func _process(delta: float) -> void:
 			#_shoot(truePierceBulletScene, target, 800, 1, 0.5, 40, 10)
 			
 			# SpawnBullet (Ball spawn)
-			_shoot(spawnBulletScene, target, 600, 10, 0.5, 1, 2, truePierceBulletScene, {"damage": 0,"movement": Vector2(),"lifetime": 100,"width": 150,"height": 150,"texture": PlaceholderTexture2D.new(), "damage_per_second": 5})
+			#_shoot(spawnBulletScene, target, 600, 10, 0.5, 1, 2, truePierceBulletScene, {"damage": 0,"movement": Vector2(),"lifetime": 100,"width": 150,"height": 150,"texture": PlaceholderTexture2D.new(), "damage_per_second": 5})
 			
 			shootingInterval = 0
 	else:
