@@ -15,8 +15,6 @@ var angle: float
 var shootingInterval: float = 0
 @export var firerate: float = 1 # Firerate in shots/second
 
-var regenInterval: float = 0
-
 # Movement start
 func GetInput():
 	var inputDirection = Input.get_vector("left", "right", "up", "down")
@@ -32,12 +30,8 @@ func _physics_process(_delta):
 
 func _process(delta: float) -> void:
 	shootingInterval += delta
-	regenInterval += delta
-	
-	if regenInterval >= 1 :
-		Globals.health += Globals.add_health_regen
-		if Globals.health > Globals.max_health:
-			Globals.health = Globals.max_health
+	if Globals.health < Globals.max_health:
+		Globals.health += Globals.add_health_regen * delta
 	
 	# Shoot the target if one exists, otherwise point at cursor
 	# Rewrite when weapons definitions are created
@@ -54,7 +48,7 @@ func _process(delta: float) -> void:
 			#_shoot(pierceBulletScene, target, 800, 100, 10)
 			
 			# TruePierceBullet
-			#_shoot(truePierceBulletScene, target, 800, 1, 0.5, 40, 10)
+			#_shoot(truePierceBulletScene, target, 0, damage, 0.5, 10, 500)
 			
 			# SpawnBullet (Ball spawn)
 			#_shoot(spawnBulletScene, target, 600, 10, 0.5, 1, 2, truePierceBulletScene, {"damage": 0,"movement": Vector2(),"lifetime": 100,"width": 150,"height": 150,"texture": PlaceholderTexture2D.new(), "damage_per_second": 5})
@@ -92,7 +86,7 @@ func _shoot(bulletScene: PackedScene, bulletTarget: PhysicsBody2D, bulletSpeed: 
 	var playerGunPosition = Vector2((collisionShape.shape.radius+15)*cos(angle - PI/2),(collisionShape.shape.radius+15)*sin(angle - PI/2))
 	bulletInstance.global_position = global_position + playerGunPosition
 	bulletInstance.move_local_x(-width/2)
-	bulletInstance.move_local_y(-height)
+	bulletInstance.move_local_y(-height/2)
 
 # Function to select new target
 func SelectNewTarget() -> RigidBody2D:
