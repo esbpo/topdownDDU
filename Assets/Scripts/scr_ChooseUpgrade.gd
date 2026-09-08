@@ -56,7 +56,8 @@ func _pressed():
 				Globals.health_multiplier += data[key] #if health key is found, add key value to health multiplier
 				break
 			"basehealth":
-				Globals.add_base_health += data[key] #if basehealth key is found, add key value to basehealth multiplier
+				#if basehealth key is found, add key value to basehealth multiplier
+				Globals.health += data[key] * Globals.health_multiplier; Globals.max_health += data[key] * Globals.health_multiplier 
 				break
 			"healthregen":
 				Globals.add_health_regen += data[key] #if healthregen key is found, add key value to health regen variable

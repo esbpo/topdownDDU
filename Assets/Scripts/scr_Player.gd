@@ -8,16 +8,19 @@ extends CharacterBody2D
 @onready var truePierceBulletScene = preload("res://Assets/Resources/res_TruePierceBullet.tscn")
 @onready var spawnBulletScene = preload("res://Assets/Resources/res_SpawnBullet.tscn")
 
+@onready var weaponJson = FileAccess.get_file_as_string("res://Data/Weapons.json")
+
 var target: RigidBody2D
 var angle: float
 var shootingInterval: float = 0
 @export var firerate: float = 1 # Firerate in shots/second
 
+var regenInterval: float = 0
 
 # Movement start
 func GetInput():
 	var inputDirection = Input.get_vector("left", "right", "up", "down")
-	velocity = inputDirection * speed
+	velocity = inputDirection * speed * Globals.movement_speed_multiplier
 	
 func _physics_process(_delta):
 	GetInput()
@@ -29,16 +32,23 @@ func _physics_process(_delta):
 
 func _process(delta: float) -> void:
 	shootingInterval += delta
+	regenInterval += delta
+	
+	if regenInterval >= 1 :
+		Globals.health += Globals.add_health_regen
+		if Globals.health > Globals.max_health:
+			Globals.health = Globals.max_health
 	
 	# Shoot the target if one exists, otherwise point at cursor
 	# Rewrite when weapons definitions are created
 	if target:
 		angle = global_position.angle_to_point(target.global_position) + PI/2
 		rotation = angle
-		if shootingInterval >= 1/firerate:
+		if shootingInterval >= 1 / (firerate * Globals.attack_speed_multiplier):
+			var damage = 10 * Globals.damage_multiplier
 			
 			# BaseBullet
-			_shoot(baseBulletScene, target, 1200, 10, 10, 2, 4)
+			_shoot(baseBulletScene, target, 1200, damage, 10, 2, 4)
 			
 			# PierceBullet
 			#_shoot(pierceBulletScene, target, 800, 100, 10)
@@ -108,6 +118,9 @@ func SelectNewTarget() -> RigidBody2D:
 			
 	# Return best target
 	return new_target
+
+func Equip(id):
+	pass
 
 # Unnescessary with runtime targeting
 #func _on_area_player_max_range_body_entered(body: Node2D) -> void:
