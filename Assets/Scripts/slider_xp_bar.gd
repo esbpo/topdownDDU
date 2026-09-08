@@ -1,10 +1,8 @@
 extends HSlider
 @onready var LevelUp = $"/root/Node2D/can_LevelUp"
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
+func GetXpCost(level):
+	return 107.96 * pow(1.33, level) - 43.62
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -13,7 +11,8 @@ func _process(_delta: float) -> void:
 	if value >= max_value:
 		value -= max_value
 		Globals.xp -= max_value
-		max_value *= 1.2
+		Globals.level += 1
+		max_value = GetXpCost(Globals.level)
 		max_value = round(max_value)
 		LevelUp.ShowUpgrades()
 		

@@ -5,6 +5,7 @@ var xp = 0
 var time = 0
 var wave = 1
 var enemies_left = 0
+var level = 0
 
 #Upgrade variabler
 var damage_multiplier = 1 #Damage multiplier, adds 0.2 or 20% per level on the multiplier
