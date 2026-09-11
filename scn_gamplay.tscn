@@ -36,7 +36,6 @@ shape = SubResource("CircleShape2D_epa72")
 position_smoothing_enabled = true
 
 [node name="Ui" parent="obj_Player/cam_PlayerCamera" unique_id=510664376 instance=ExtResource("3_qts02")]
-visible = false
 
 [node name="spr_PlayerSprite" type="Sprite2D" parent="obj_Player" unique_id=402597113]
 position = Vector2(0, -3)
@@ -51,6 +50,7 @@ shape = SubResource("CircleShape2D_n5eui")
 script = ExtResource("5_qts02")
 
 [node name="can_LevelUp" type="CanvasLayer" parent="." unique_id=494721147]
+visible = false
 script = ExtResource("7_n40bc")
 
 [connection signal="body_entered" from="obj_Player/area_PlayerMaxRange" to="obj_Player" method="_on_area_player_max_range_body_entered"]
