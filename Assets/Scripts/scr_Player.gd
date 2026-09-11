@@ -99,10 +99,10 @@ func SelectNewTarget() -> RigidBody2D:
 	collisions.erase(self)
 	
 	# Iterates over targets to get closest enemy
-	for body: RigidBody2D in collisions:
-		# Ensure no bullets are targeted
-		if body.has_meta("bullet"):
-			continue
+	for body in collisions:
+		# Ensure only enemies are targeted
+		if not ("health" in body): continue
+		
 			
 		distance = global_position.distance_squared_to(body.global_position)
 		

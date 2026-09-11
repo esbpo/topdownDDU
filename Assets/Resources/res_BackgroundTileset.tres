@@ -1,0 +1,38 @@
+[gd_resource type="TileSet" format=3 uid="uid://cakrvcn5ojkb1"]
+
+[ext_resource type="Texture2D" uid="uid://pqu0vx123oca" path="res://Assets/Textures/GroundTileset.png" id="1_ygq6j"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_ygq6j"]
+tile_data = PackedInt32Array(0, 0, 2, 1, 0, 0, 2, 0, 2, 3, 0, 0, 4, 0, 2)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_0hkfm"]
+tile_data = PackedInt32Array(0, 0, 2, 1, 0, 0, 2, 0, 2, 3, 0, 0)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hkfm"]
+texture = ExtResource("1_ygq6j")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, 4, -8, 4, 8, -4, 8)
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, 4, -8, 4, 4, -4, 4, -8, 4, -8, -4, -4, -4)
+
+[resource]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_0hkfm")
+pattern_0 = SubResource("TileMapPattern_ygq6j")
+pattern_1 = SubResource("TileMapPattern_0hkfm")
