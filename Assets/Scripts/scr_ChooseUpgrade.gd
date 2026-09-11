@@ -43,7 +43,7 @@ func update():
 		
 		
 func _pressed():
-	$"../../..".levelIncrease(int(data["id"]))
+	$"../../..".levelIncrease(data["id"])
 	for key in data.keys(): #Checks all keys in data and looks for the correct upgrade key
 		match key:
 			"damage":

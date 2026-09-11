@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj083fnnxeknw"
-path="res://.godot/imported/DamageUpgrade.png-a0e8797fc01532912715faa931c76ee3.ctex"
+uid="uid://ctnf0k3hs81p6"
+path="res://.godot/imported/MovementUpgradeBackground.png-eef4ccaa99fc7390f03009c8b566197d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/DamageUpgrade.png"
-dest_files=["res://.godot/imported/DamageUpgrade.png-a0e8797fc01532912715faa931c76ee3.ctex"]
+source_file="res://Assets/Textures/Upgrade/MovementUpgradeBackground.png"
+dest_files=["res://.godot/imported/MovementUpgradeBackground.png-eef4ccaa99fc7390f03009c8b566197d.ctex"]
 
 [params]
 

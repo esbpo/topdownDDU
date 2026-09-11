@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdk8akvq36iyb"
-path="res://.godot/imported/BuffUpgradeBackground.png-2b8ec007e300e2a58a03127a03ff7677.ctex"
+uid="uid://cg3kgvjg8ass2"
+path="res://.godot/imported/HealthUpgrade.png-1188ee97e61c0ac3e85e839cf40d725c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/BuffUpgradeBackground.png"
-dest_files=["res://.godot/imported/BuffUpgradeBackground.png-2b8ec007e300e2a58a03127a03ff7677.ctex"]
+source_file="res://Assets/Textures/Upgrade/HealthUpgrade.png"
+dest_files=["res://.godot/imported/HealthUpgrade.png-1188ee97e61c0ac3e85e839cf40d725c.ctex"]
 
 [params]
 

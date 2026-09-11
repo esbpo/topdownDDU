@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkogrpvmqngdp"
-path="res://.godot/imported/OffensiveUpgradeBackground.png-1c3f479e190ddb84d8edd5b2a147385c.ctex"
+uid="uid://cs8lyfionq8nt"
+path="res://.godot/imported/AbilityUpgradeBackground.png-3a8561261f26722edf6e94757ad8d068.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/OffensiveUpgradeBackground.png"
-dest_files=["res://.godot/imported/OffensiveUpgradeBackground.png-1c3f479e190ddb84d8edd5b2a147385c.ctex"]
+source_file="res://Assets/Textures/Upgrade/AbilityUpgradeBackground.png"
+dest_files=["res://.godot/imported/AbilityUpgradeBackground.png-3a8561261f26722edf6e94757ad8d068.ctex"]
 
 [params]
 
