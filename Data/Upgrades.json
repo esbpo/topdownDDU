@@ -1,65 +1,65 @@
-[
-	{
-		"id": 0,
+{
+	"0":{
+		"id": "0",
 		"title": "Damage Up",
 		"damage": 0.2,
 		"level": 0,
 		"maxlevel": 5,
 		"description": "+ 20% Damage",
-		"icon": "res://Assets/Textures/Upgrade/upgradeFiller1.png"
+		"icon": "res://Assets/Textures/Upgrade/DamageUpgrade.png"
 	},
-	{
-		"id": 1,
+	"1":{
+		"id": "1",
 		"title": "Attack Speed Up",
 		"attackspeed": 0.1,
 		"level": 0,
 		"maxlevel": 5,
 		"description": "+ 10% Attack Speed",
-		"icon": "res://Assets/Textures/Upgrade/upgradeFiller2.png"
+		"icon": "res://Assets/Textures/Upgrade/OffensiveUpgradeBackground.png"
 	},
-	{
-		"id": 2,
+	"2":{
+		"id": "2",
 		"title": "Health Up",
 		"health": 0.25,
 		"level": 0,
 		"maxlevel": 5,
 		"description": "+ 25% Health",
-		"icon": "res://Assets/Textures/Upgrade/upgradeFiller3.png"
+		"icon": "res://Assets/Textures/Upgrade/HealthUpgrade.png"
 	},
-	{
-		"id": 3,
+	"3":{
+		"id": "3",
 		"title": "Base Health Up",
 		"basehealth": 100,
 		"level": 0,
 		"maxlevel": 5,
 		"description": "+ 100 Base Health",
-		"icon": "res://Assets/Textures/GroundTileset.png"
+		"icon": "res://Assets/Textures/Upgrade/HealthUpgrade.png"
 	},
-	{
-		"id": 4,
+	"4":{
+		"id": "4",
 		"title": "Movement speed up",
 		"movementspeed": 0.15,
 		"level": 0,
 		"maxlevel": 5,
 		"description": "+ 15% movement speed",
-		"icon": "res://Assets/Textures/GroundTileset.png"
+		"icon": "res://Assets/Textures/Upgrade/MovementUpgradeBackground.png"
 	},
-	{
-		"id": 5,
+	"5":{
+		"id": "5",
 		"title": "Health regen",
 		"healthregen":5,
 		"level": 0,
 		"maxlevel": 3,
 		"description": "+ 5 health pr. second",
-		"icon": "res://Assets/Textures/GroundTileset.png"
+		"icon": "res://Assets/Textures/Upgrade/HealthUpgrade.png"
 	},
-	{
-		"id": 6,
+	"6":{
+		"id": "6",
 		"title": "Assault rifle",
 		"weapon_id": 1,
 		"level": 0,
 		"maxlevel": 1,
 		"description": "Unlocks assault rifle",
-		"icon": "res://Assets/Textures/AbilityUpgradeBackground.png"
+		"icon": "res://Assets/Textures/Upgrade/AbilityUpgradeBackground.png"
 	},
-]
+}

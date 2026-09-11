@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs8lyfionq8nt"
-path="res://.godot/imported/AbilityUpgradeBackground.png-bbf35bd39f3df61c052f412b5122ef59.ctex"
+uid="uid://cdk8akvq36iyb"
+path="res://.godot/imported/BuffUpgradeBackground.png-591999f5bd202a6d3249f7a6b5568b77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/AbilityUpgradeBackground.png"
-dest_files=["res://.godot/imported/AbilityUpgradeBackground.png-bbf35bd39f3df61c052f412b5122ef59.ctex"]
+source_file="res://Assets/Textures/Upgrade/BuffUpgradeBackground.png"
+dest_files=["res://.godot/imported/BuffUpgradeBackground.png-591999f5bd202a6d3249f7a6b5568b77.ctex"]
 
 [params]
 

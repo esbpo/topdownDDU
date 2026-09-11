@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg3kgvjg8ass2"
-path="res://.godot/imported/HealthUpgrade.png-9874459bd3b6ccea5b257155ee5da137.ctex"
+uid="uid://dkogrpvmqngdp"
+path="res://.godot/imported/OffensiveUpgradeBackground.png-55c0c9bad4be4e8a5905b70df1fd2fc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/HealthUpgrade.png"
-dest_files=["res://.godot/imported/HealthUpgrade.png-9874459bd3b6ccea5b257155ee5da137.ctex"]
+source_file="res://Assets/Textures/Upgrade/OffensiveUpgradeBackground.png"
+dest_files=["res://.godot/imported/OffensiveUpgradeBackground.png-55c0c9bad4be4e8a5905b70df1fd2fc1.ctex"]
 
 [params]
 
