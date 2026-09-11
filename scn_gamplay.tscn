@@ -26,12 +26,14 @@ collision_layer = 3
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("2_t24il")
+speed = 300.0
 
 [node name="col_PlayerCollider" type="CollisionShape2D" parent="obj_Player" unique_id=314141808]
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_epa72")
 
 [node name="cam_PlayerCamera" type="Camera2D" parent="obj_Player" unique_id=26764732]
+position_smoothing_enabled = true
 
 [node name="Ui" parent="obj_Player/cam_PlayerCamera" unique_id=510664376 instance=ExtResource("3_qts02")]
 visible = false
@@ -49,7 +51,6 @@ shape = SubResource("CircleShape2D_n5eui")
 script = ExtResource("5_qts02")
 
 [node name="can_LevelUp" type="CanvasLayer" parent="." unique_id=494721147]
-visible = false
 script = ExtResource("7_n40bc")
 
 [connection signal="body_entered" from="obj_Player/area_PlayerMaxRange" to="obj_Player" method="_on_area_player_max_range_body_entered"]

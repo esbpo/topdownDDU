@@ -15,20 +15,15 @@ var angle: float
 var shootingInterval: float = 0
 @export var firerate: float = 1 # Firerate in shots/second
 
-# Movement start
 func GetInput():
 	var inputDirection = Input.get_vector("left", "right", "up", "down")
 	velocity = inputDirection * speed * Globals.movement_speed_multiplier
 	
-func _physics_process(_delta):
+func _process(delta: float) -> void:
 	GetInput()
 	move_and_slide()
-# Movement end
-
 
 # Shooting system
-
-func _process(delta: float) -> void:
 	shootingInterval += delta
 	if Globals.health < Globals.max_health:
 		Globals.health += Globals.add_health_regen * delta
