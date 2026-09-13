@@ -24,7 +24,7 @@ var weapons: Array = [] # Equipped weapons
 
 func _ready() -> void:
 	weaponArray = JSON.parse_string(weaponJson)
-	Equip(3)
+	Equip(0)
 #In Weapons.json the following id's refer to specified weapon
 #id - 0 = starter pistol
 #id - 1 = assault rifle
@@ -98,7 +98,7 @@ func _shoot(bulletScene: PackedScene, bulletTarget: PhysicsBody2D, bulletSpeed: 
 		var collisionShape = $col_PlayerCollider
 		var playerGunPosition = Vector2((collisionShape.shape.radius+15)*cos(angle - PI/2),(collisionShape.shape.radius+15)*sin(angle - PI/2))
 		bulletInstance.global_position = global_position + playerGunPosition
-		bulletInstance.move_local_x(-width/2)
+		bulletInstance.move_local_x(0)
 		bulletInstance.move_local_y(-height/2)
 
 # Function to select new target
