@@ -89,10 +89,10 @@ custom_minimum_size = Vector2(0, 32)
 custom_maximum_size = Vector2(-1, 32)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBox/MarginContainer_Upgrade1/Button/VBoxContainer/MarginContainer_level" unique_id=1673489306]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/MarginContainer_Upgrade1/Button/VBoxContainer/MarginContainer_level" unique_id=2035694250]
 custom_minimum_size = Vector2(300, 0)
-custom_maximum_size = Vector2(300, -1)
 layout_mode = 2
+size_flags_horizontal = 4
 alignment = 1
 
 [node name="MarginContainer_Upgrade2" type="MarginContainer" parent="HBox" unique_id=1101410763]
@@ -154,11 +154,9 @@ custom_minimum_size = Vector2(0, 32)
 custom_maximum_size = Vector2(300, 32)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer/MarginContainer_level" unique_id=1677223679]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/MarginContainer_Upgrade2/Button/VBoxContainer/MarginContainer_level" unique_id=2105064887]
 custom_minimum_size = Vector2(300, 0)
-custom_maximum_size = Vector2(300, -1)
 layout_mode = 2
-size_flags_horizontal = 4
 alignment = 1
 
 [node name="MarginContainer_Upgrade3" type="MarginContainer" parent="HBox" unique_id=1013424916]
@@ -220,9 +218,7 @@ custom_minimum_size = Vector2(0, 32)
 custom_maximum_size = Vector2(300, 32)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer/MarginContainer_level" unique_id=491202911]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/MarginContainer_Upgrade3/Button/VBoxContainer/MarginContainer_level" unique_id=1451017054]
 custom_minimum_size = Vector2(300, 0)
-custom_maximum_size = Vector2(300, -1)
 layout_mode = 2
-size_flags_horizontal = 4
 alignment = 1

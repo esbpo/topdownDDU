@@ -26,20 +26,21 @@ func update():
 		#and creates x empty stars depending on the upgrades maxlevel - level
 		var filledStar = TextureRect.new()
 		filledStar.texture = load("res://Assets/Textures/Upgrade/star_filled.png")
-		filledStar.size_flags_horizontal = Control.SIZE_FILL | Control.SIZE_EXPAND
+		filledStar.size_flags_horizontal = TextureRect.PRESET_MODE_KEEP_SIZE
 		filledStar.size_flags_vertical = Control.SIZE_FILL
 		filledStar.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		filledStar.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
+		filledStar.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		levelStars.add_child(filledStar)
 		
 	for star in range (data["maxlevel"]-data["level"]):
 		var emptyStar = TextureRect.new()
 		emptyStar.texture = load("res://Assets/Textures/Upgrade/star_empty.png") #
-		emptyStar.size_flags_horizontal = Control.SIZE_FILL | Control.SIZE_EXPAND
-		emptyStar.size_flags_vertical = Control.SIZE_FILL
+		emptyStar.size_flags_horizontal = TextureRect.PRESET_MODE_KEEP_SIZE
+		emptyStar.size_flags_vertical = Control.SIZE_FILL 
 		emptyStar.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		emptyStar.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
+		emptyStar.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		levelStars.add_child(emptyStar)
+		
 		
 		
 func _pressed():
