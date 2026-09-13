@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dwob0fsr0756x" path="res://Assets/Scripts/UI/scr_SliderHpBar.gd" id="1_b3bc3"]
 [ext_resource type="Script" uid="uid://bu723hytfvlio" path="res://Assets/Scripts/UI/scr_label_time.gd" id="1_g6l6n"]
 [ext_resource type="Script" uid="uid://dna4ktiya1bmj" path="res://Assets/Scripts/UI/scr_LabelRemainingEnemies.gd" id="2_qui0h"]
+[ext_resource type="Script" uid="uid://8ffysnc615ts" path="res://Assets/Scripts/scr_OpenStatMenu.gd" id="3_vrfts"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_t3gvo"]
 
@@ -117,6 +118,7 @@ script = ExtResource("2_qui0h")
 [node name="Button_statsMenu" type="Button" parent="Ui/MarginContainer_info/HBoxContainer" unique_id=586112928]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+script = ExtResource("3_vrfts")
 
 [node name="MarginContainer_hp_xp-Bars" type="MarginContainer" parent="Ui" unique_id=89738257]
 layout_mode = 1

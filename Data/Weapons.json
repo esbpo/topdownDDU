@@ -8,7 +8,9 @@
 		"height": 4,
 		"type": "basic",
 		"lifetime": 1,
-		"texture": null
+		"texture": null,
+		"bulletamount": 1,
+		"bulletspread": 0
 	},
 	{
 		"id": 1,
@@ -19,6 +21,60 @@
 		"height": 4,
 		"type": "basic",
 		"lifetime": 1,
-		"texture": null
+		"texture": null,
+		"bulletamount": 1,
+		"bulletspread": 0
+	},
+	{
+		"id": 2,
+		"firerate": 0.25,
+		"bulletspeed": 1200,
+		"damage": 50,
+		"width": 2,
+		"height": 4,
+		"type": "pierce",
+		"lifetime": 1,
+		"texture": null,
+		"bulletamount": 1,
+		"bulletspread": 0
+	},
+	{
+		"id": 3,
+		"firerate": 0.8,
+		"bulletspeed": 1200,
+		"damage": 5,
+		"width": 2,
+		"height": 4,
+		"type": "basic",
+		"lifetime": 1,
+		"texture": null,
+		"bulletamount": 10,
+		"bulletspread": 0.4363323
+	},
+	{
+		"id": 4,
+		"firerate": 0.20,
+		"bulletspeed": 0,
+		"damage": 80,
+		"width": 2,
+		"height": 4,
+		"type": "truePierce",
+		"lifetime": 0.2,
+		"texture": null,
+		"bulletamount": 1,
+		"bulletspread": 0
+	},
+	{
+		"id": 5,
+		"firerate": 100,
+		"bulletspeed": 600,
+		"damage": 80,
+		"width": 10,
+		"height": 4,
+		"type": "truePierce",
+		"lifetime": 2,
+		"texture": null,
+		"bulletamount": 1,
+		"bulletspread": 0.08726646
 	},
 ]

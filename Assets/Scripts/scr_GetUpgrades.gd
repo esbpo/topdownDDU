@@ -22,6 +22,8 @@ func Upgrade():
 	upgrade3.update()
 	
 func levelIncrease (id):
+	#Raises the chosen upgrades level by 1
 	parent.upgradeDict[id]["level"] += 1
+	#Erases the upgrade from the upgrade dictionay if it has reached maxlevel. Thus the player cannot pick it again.
 	if parent.upgradeDict[id]["level"] >= parent.upgradeDict[id]["maxlevel"]:
-		parent.upgradeDict.erase(id)
+		parent.upgradeDict.erase(id) 

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bx86n2mwcig53" path="res://UI.tscn" id="3_qts02"]
 [ext_resource type="Script" uid="uid://872lpv7vjcir" path="res://Assets/Scripts/scr_EnemyHandler.gd" id="5_qts02"]
 [ext_resource type="Script" uid="uid://beu60ulx3tsie" path="res://Assets/Scripts/scr_ShowUpgrades.gd" id="7_n40bc"]
+[ext_resource type="PackedScene" uid="uid://dxcq1ursg74ql" path="res://scn_StatMenu.tscn" id="7_vchuf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_epa72"]
 radius = 8.5
@@ -52,6 +53,8 @@ script = ExtResource("5_qts02")
 [node name="can_LevelUp" type="CanvasLayer" parent="." unique_id=494721147]
 visible = false
 script = ExtResource("7_n40bc")
+
+[node name="scn_StatMenu" parent="." unique_id=367605091 instance=ExtResource("7_vchuf")]
 
 [connection signal="body_entered" from="obj_Player/area_PlayerMaxRange" to="obj_Player" method="_on_area_player_max_range_body_entered"]
 [connection signal="body_exited" from="obj_Player/area_PlayerMaxRange" to="obj_Player" method="_on_area_player_max_range_body_exited"]

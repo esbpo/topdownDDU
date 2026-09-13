@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dxcq1ursg74ql"]
+
+[ext_resource type="Script" uid="uid://13d264kb7emj" path="res://Assets/Scripts/scr_ShowStatMenu.gd" id="1_geeoh"]
+
+[node name="scn_StatMenu" type="Control" unique_id=367605091]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_geeoh")
