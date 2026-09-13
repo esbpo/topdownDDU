@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bkmvex5dry666"]
+
+[ext_resource type="StyleBox" uid="uid://cv4wv2b33i2ft" path="res://Assets/Resources/UI/res_MenuBackground.tres" id="1_81hkd"]
+[ext_resource type="StyleBox" uid="uid://dgqji3lbvjx5c" path="res://Assets/Resources/UI/res_MenuButtonBase.tres" id="2_edvgt"]
+[ext_resource type="Script" uid="uid://deoeidqs302av" path="res://Assets/Scripts/UI/scr_GameOverTitle.gd" id="2_h5ks1"]
+[ext_resource type="StyleBox" uid="uid://bwq5gxwbxhjrs" path="res://Assets/Resources/UI/res_MenuButtonPressed.tres" id="3_tlnbe"]
+[ext_resource type="StyleBox" uid="uid://cap7n6h3vny2r" path="res://Assets/Resources/UI/res_MenuButtonHover.tres" id="4_h5ks1"]
+[ext_resource type="Script" uid="uid://dfed3twog5dfk" path="res://Assets/Scripts/UI/scr_ReturnToMainMenu.gd" id="5_tlnbe"]
+
+[node name="ScnGameOverScreen" type="PanelContainer" unique_id=88737436]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_81hkd")
+
+[node name="mar_LabelContainer" type="MarginContainer" parent="." unique_id=714259343]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/margin_top = 100
+
+[node name="lbl_GameOver" type="Label" parent="mar_LabelContainer" unique_id=628610780]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Game Over"
+script = ExtResource("2_h5ks1")
+
+[node name="mar_ButtonContainer" type="MarginContainer" parent="." unique_id=1156235298]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="btn_ReturnToMain" type="Button" parent="mar_ButtonContainer" unique_id=609688742]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("2_edvgt")
+theme_override_styles/pressed = ExtResource("3_tlnbe")
+theme_override_styles/hover = ExtResource("4_h5ks1")
+text = "Main Menu"
+script = ExtResource("5_tlnbe")

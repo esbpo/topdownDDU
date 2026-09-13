@@ -8,4 +8,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	text = "Enemies left: " + str(Globals.enemies_left)
+	text = "Enemies left: " + str(int(Globals.enemies_left))

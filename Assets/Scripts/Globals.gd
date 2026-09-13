@@ -1,5 +1,11 @@
 extends Node
 
+var won: bool = false # True if player has won the game
+var currency: int = 0 # Currency for unlocking new characters
+
+# Player texture filepath
+var player_skin: String = "res://Assets/Textures/Player/PlayerModelLongGun.png"
+
 var max_health = 1000
 var health = 1000
 var xp = 0

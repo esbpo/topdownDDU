@@ -87,5 +87,6 @@ func _process(delta: float) -> void:
 		Globals.enemies_left += enemiesMax
 		if waveCount < len(waves) - 1:
 			waveCount += 1
+			Globals.wave += 1
 	
 	

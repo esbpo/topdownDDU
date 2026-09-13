@@ -52,6 +52,10 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	
 	# Calculate the movement vector
 	var movement = (player.global_position - global_position).normalized() * speed
+	
+	if global_position.distance_squared_to(player.global_position) > 1000000:
+		movement *= 10
+	
 	linear_velocity = movement
 	
 	# Calculate angle to player and rotate, add 90 degrees to rotate to correct position

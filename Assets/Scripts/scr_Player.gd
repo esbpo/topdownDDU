@@ -23,20 +23,26 @@ var firerates: Array = [] # Firerate in shots/second
 var weapons: Array = [] # Equipped weapons
 
 func _ready() -> void:
+	var texture = load(Globals.player_skin)
+	$"spr_PlayerSprite".texture = texture
 	weaponArray = JSON.parse_string(weaponJson)
-	Equip(0)
-#In Weapons.json the following id's refer to specified weapon
-#id - 0 = starter pistol
-#id - 1 = assault rifle
-#id - 2 = sniper rifle
-#id - 3 = shotgun
-#id - 4 = laser
-#id - 5 = flamethrower
+	Equip(Globals.starter_weapon)
+# In Weapons.json the following IDs refer to specified weapon
+# id: 0 = starter pistol
+# id: 1 = assault rifle
+# id: 2 = sniper rifle
+# id: 3 = shotgun
+# id: 4 = laser
+# id: 5 = flamethrower
 func GetInput():
 	var inputDirection = Input.get_vector("left", "right", "up", "down")
 	velocity = inputDirection * speed * Globals.movement_speed_multiplier
 	
 func _process(delta: float) -> void:
+	if Globals.health <= 0:
+		Globals.won = false
+		get_tree().change_scene_to_file("res://scn_GameOverScreen.tscn")
+		
 	GetInput()
 	move_and_slide()
 

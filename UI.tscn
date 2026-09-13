@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://bx86n2mwcig53"]
 
 [ext_resource type="Script" uid="uid://dk8npe556jr67" path="res://Assets/Scripts/UI/scr_SliderXpBar.gd" id="1_3b2b5"]
+[ext_resource type="StyleBox" uid="uid://dgqji3lbvjx5c" path="res://Assets/Resources/UI/res_MenuButtonBase.tres" id="1_27c8x"]
 [ext_resource type="Script" uid="uid://dwob0fsr0756x" path="res://Assets/Scripts/UI/scr_SliderHpBar.gd" id="1_b3bc3"]
 [ext_resource type="Script" uid="uid://bu723hytfvlio" path="res://Assets/Scripts/UI/scr_label_time.gd" id="1_g6l6n"]
+[ext_resource type="StyleBox" uid="uid://bwq5gxwbxhjrs" path="res://Assets/Resources/UI/res_MenuButtonPressed.tres" id="2_i1vam"]
 [ext_resource type="Script" uid="uid://dna4ktiya1bmj" path="res://Assets/Scripts/UI/scr_LabelRemainingEnemies.gd" id="2_qui0h"]
+[ext_resource type="StyleBox" uid="uid://cap7n6h3vny2r" path="res://Assets/Resources/UI/res_MenuButtonHover.tres" id="3_q77pa"]
 [ext_resource type="Script" uid="uid://8ffysnc615ts" path="res://Assets/Scripts/scr_OpenStatMenu.gd" id="3_vrfts"]
+[ext_resource type="Texture2D" uid="uid://qctevlxblxl3" path="res://Assets/Textures/ThreeBarsIcon.png" id="4_i1vam"]
+[ext_resource type="Script" uid="uid://dflb7c0hjima6" path="res://Assets/Scripts/UI/scr_LabelWaveCount.gd" id="6_q77pa"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_t3gvo"]
 
@@ -81,7 +86,13 @@ theme_override_constants/margin_top = 30
 [node name="Button_menu" type="Button" parent="Ui/MarginContainer_menu" unique_id=1115498360]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = ExtResource("1_27c8x")
+theme_override_styles/pressed = ExtResource("2_i1vam")
+theme_override_styles/hover = ExtResource("3_q77pa")
 action_mode = 0
+icon = ExtResource("4_i1vam")
+icon_alignment = 1
 
 [node name="MarginContainer_info" type="MarginContainer" parent="Ui" unique_id=1821882537]
 layout_mode = 1
@@ -108,6 +119,7 @@ script = ExtResource("1_g6l6n")
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Wave: 10"
+script = ExtResource("6_q77pa")
 
 [node name="Label_remainingEnemies" type="Label" parent="Ui/MarginContainer_info/HBoxContainer" unique_id=1592010951]
 layout_mode = 2
@@ -118,6 +130,9 @@ script = ExtResource("2_qui0h")
 [node name="Button_statsMenu" type="Button" parent="Ui/MarginContainer_info/HBoxContainer" unique_id=586112928]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_styles/normal = ExtResource("1_27c8x")
+theme_override_styles/pressed = ExtResource("2_i1vam")
+theme_override_styles/hover = ExtResource("3_q77pa")
 script = ExtResource("3_vrfts")
 
 [node name="MarginContainer_hp_xp-Bars" type="MarginContainer" parent="Ui" unique_id=89738257]

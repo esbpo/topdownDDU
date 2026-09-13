@@ -1,18 +1,11 @@
 [gd_scene format=3 uid="uid://cfbrqwyujf0hv"]
 
 [ext_resource type="StyleBox" uid="uid://dgqji3lbvjx5c" path="res://Assets/Resources/UI/res_MenuButtonBase.tres" id="1_3y1ja"]
+[ext_resource type="StyleBox" uid="uid://cv4wv2b33i2ft" path="res://Assets/Resources/UI/res_MenuBackground.tres" id="1_3ytto"]
 [ext_resource type="Script" uid="uid://dmlt0kctrsvxq" path="res://Assets/Scripts/UI/scr_StartGame.gd" id="1_fy8el"]
 [ext_resource type="Script" uid="uid://uy3rbpk5b4d2" path="res://Assets/Scripts/UI/scr_ExitGame.gd" id="2_n8vst"]
 [ext_resource type="StyleBox" uid="uid://bwq5gxwbxhjrs" path="res://Assets/Resources/UI/res_MenuButtonPressed.tres" id="2_rbdih"]
 [ext_resource type="StyleBox" uid="uid://cap7n6h3vny2r" path="res://Assets/Resources/UI/res_MenuButtonHover.tres" id="3_v8qnv"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5eui"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0, 0.50175387, 0.5422731, 1)
 
 [node name="root_StartScreen" type="PanelContainer" unique_id=1326589324]
 anchors_preset = 15
@@ -20,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_n5eui")
+theme_override_styles/panel = ExtResource("1_3ytto")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2138671516]
 custom_minimum_size = Vector2(400, 100)
