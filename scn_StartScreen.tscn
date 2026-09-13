@@ -1,81 +1,76 @@
 [gd_scene format=3 uid="uid://cfbrqwyujf0hv"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6cw5p"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+[ext_resource type="StyleBox" uid="uid://dgqji3lbvjx5c" path="res://Assets/Resources/UI/res_MenuButtonBase.tres" id="1_3y1ja"]
+[ext_resource type="Script" uid="uid://dmlt0kctrsvxq" path="res://Assets/Scripts/UI/scr_StartGame.gd" id="1_fy8el"]
+[ext_resource type="Script" uid="uid://uy3rbpk5b4d2" path="res://Assets/Scripts/UI/scr_ExitGame.gd" id="2_n8vst"]
+[ext_resource type="StyleBox" uid="uid://bwq5gxwbxhjrs" path="res://Assets/Resources/UI/res_MenuButtonPressed.tres" id="2_rbdih"]
+[ext_resource type="StyleBox" uid="uid://cap7n6h3vny2r" path="res://Assets/Resources/UI/res_MenuButtonHover.tres" id="3_v8qnv"]
 
-[node name="root_StartScreen" type="Control" unique_id=682211393]
-layout_mode = 3
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5eui"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0.50175387, 0.5422731, 1)
+
+[node name="root_StartScreen" type="PanelContainer" unique_id=1326589324]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n5eui")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2138671516]
 custom_minimum_size = Vector2(400, 100)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 12
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=1452214531]
+[node name="btn_Start" type="Button" parent="VBoxContainer" unique_id=1452214531]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_6cw5p")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_6cw5p")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6cw5p")
+theme_override_styles/normal = ExtResource("1_3y1ja")
+theme_override_styles/pressed = ExtResource("2_rbdih")
+theme_override_styles/hover = ExtResource("3_v8qnv")
 action_mode = 0
 text = "Start"
+script = ExtResource("1_fy8el")
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=2079595486]
+[node name="btn_Settings" type="Button" parent="VBoxContainer" unique_id=2079595486]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_6cw5p")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_6cw5p")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6cw5p")
+theme_override_styles/normal = ExtResource("1_3y1ja")
+theme_override_styles/pressed = ExtResource("2_rbdih")
+theme_override_styles/hover = ExtResource("3_v8qnv")
 action_mode = 0
 text = "Settings"
 
-[node name="Button3" type="Button" parent="VBoxContainer" unique_id=552443187]
+[node name="btn_Exit" type="Button" parent="VBoxContainer" unique_id=552443187]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_6cw5p")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_6cw5p")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6cw5p")
+theme_override_styles/normal = ExtResource("1_3y1ja")
+theme_override_styles/pressed = ExtResource("2_rbdih")
+theme_override_styles/hover = ExtResource("3_v8qnv")
 action_mode = 0
 text = "Exit"
+script = ExtResource("2_n8vst")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=162624456]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -328.0
-offset_right = 328.0
-offset_bottom = 110.0
-grow_horizontal = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_constants/margin_top = 65
 
-[node name="Label" type="Label" parent="MarginContainer" unique_id=1891623023]
+[node name="lbl_Title" type="Label" parent="MarginContainer" unique_id=1891623023]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 80

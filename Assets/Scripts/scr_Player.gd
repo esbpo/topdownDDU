@@ -3,10 +3,10 @@ extends CharacterBody2D
 @export var speed: float = 200
 
 # Bullet scenes
-@onready var baseBulletScene = preload("res://Assets/Resources/res_BaseBullet.tscn")
-@onready var pierceBulletScene = preload("res://Assets/Resources/res_PierceBullet.tscn")
-@onready var truePierceBulletScene = preload("res://Assets/Resources/res_TruePierceBullet.tscn")
-@onready var spawnBulletScene = preload("res://Assets/Resources/res_SpawnBullet.tscn")
+@onready var baseBulletScene = preload("res://Assets/Resources/Bullets/res_BaseBullet.tscn")
+@onready var pierceBulletScene = preload("res://Assets/Resources/Bullets/res_PierceBullet.tscn")
+@onready var truePierceBulletScene = preload("res://Assets/Resources/Bullets/res_TruePierceBullet.tscn")
+@onready var spawnBulletScene = preload("res://Assets/Resources/Bullets/res_SpawnBullet.tscn")
 
 @onready var weaponJson: String = FileAccess.get_file_as_string("res://Data/Weapons.json")
 var weaponArray: Array = []

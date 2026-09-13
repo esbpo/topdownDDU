@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://btwly707w3aes"]
 
-[ext_resource type="TileSet" uid="uid://cakrvcn5ojkb1" path="res://Assets/Resources/res_BackgroundTileset.tres" id="1_qts02"]
+[ext_resource type="TileSet" uid="uid://cakrvcn5ojkb1" path="res://Assets/Resources/UI/res_BackgroundTileset.tres" id="1_qts02"]
 [ext_resource type="Texture2D" uid="uid://wduse8wsr3fk" path="res://Assets/Textures/PlayerModelHandgun.png" id="2_jt0fw"]
 [ext_resource type="Script" uid="uid://ctin03q426moe" path="res://Assets/Scripts/scr_Player.gd" id="2_t24il"]
 [ext_resource type="PackedScene" uid="uid://bx86n2mwcig53" path="res://UI.tscn" id="3_qts02"]
