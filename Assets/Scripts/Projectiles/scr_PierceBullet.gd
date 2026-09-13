@@ -8,8 +8,10 @@ var texture = PlaceholderTexture2D.new()
 var width: int = 1
 var height: int = 1
 
+var angle: float
+
 func LoadSelf() -> void:
-	
+	angle = rotation
 	lifetime = data["lifetime"]
 	damage = data["damage"]
 	movement = data["movement"]
@@ -22,17 +24,18 @@ func LoadSelf() -> void:
 	set_meta("bullet", true)
 	
 	$col_Bullet.scale = Vector2(width, height) / 2
-	$spr_Bullet.scale = Vector2(width, height)
+	$spr_Bullet.scale *= Vector2(width, height)
 	$spr_Bullet.position = Vector2(-width/2., -height/2.)
 
 func _process(delta: float) -> void:
 	lifetime -= delta
-	
+
 	if lifetime <= 0:
 		queue_free()
 
 func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	linear_velocity = movement
+	rotation = angle
 
 func _on_body_entered(body: Node) -> void:
 	if "health" in body:

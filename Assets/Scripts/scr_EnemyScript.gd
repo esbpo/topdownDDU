@@ -53,7 +53,7 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	# Calculate the movement vector
 	var movement = (player.global_position - global_position).normalized() * speed
 	
-	if global_position.distance_squared_to(player.global_position) > 1000000:
+	if global_position.distance_squared_to(player.global_position) > 1440000: # 1440000 = 1200^2
 		movement *= 10
 	
 	linear_velocity = movement

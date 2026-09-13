@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://i68pyikyd68p"]
 
 [ext_resource type="Script" uid="uid://3iulqna16qxm" path="res://Assets/Scripts/Projectiles/scr_PierceBullet.gd" id="1_wn6d8"]
+[ext_resource type="Texture2D" uid="uid://caqutodxipnfn" path="res://Assets/Resources/UI/res_BaseBulletTexture.tres" id="2_0aywc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wn6d8"]
 radius = 1.0
 height = 2.0
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5fml3"]
 
 [node name="ResPierceBullet" type="RigidBody2D" unique_id=2002531579]
 script = ExtResource("1_wn6d8")
@@ -15,8 +14,8 @@ script = ExtResource("1_wn6d8")
 shape = SubResource("CapsuleShape2D_wn6d8")
 
 [node name="spr_Bullet" type="Sprite2D" parent="." unique_id=689076270]
-position = Vector2(-1, -1)
-scale = Vector2(2, 2)
-texture = SubResource("PlaceholderTexture2D_5fml3")
+position = Vector2(-4.7683716e-07, -2.3841858e-07)
+scale = Vector2(0.06249997, 0.031249993)
+texture = ExtResource("2_0aywc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

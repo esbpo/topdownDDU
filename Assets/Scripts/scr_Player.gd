@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 200
+var speed: float = Globals.speed
 
 # Bullet scenes
 #defined as "type": "basic" in Weapons.json
@@ -55,8 +55,21 @@ func _process(delta: float) -> void:
 	for interval in shootingIntervals:
 		shootingIntervals[i] += delta
 	
-		# Shoot the target if one exists, otherwise point at cursor
-		if target:
+		# Shoot at the mouse if pressed
+		if Input.is_action_pressed("LMB"):
+			var mouse_position = get_global_mouse_position()
+			angle = global_position.angle_to_point(mouse_position) + PI/2
+			rotation = angle
+		
+			if interval >= 1 / (firerates[i] * Globals.attack_speed_multiplier):
+				var weapon = weapons[i]
+				var damage = weapon["damage"] * Globals.damage_multiplier
+				# Shoot the weapon
+				_shoot(weapon["type"], null, weapon["bulletspeed"], damage, weapon["lifetime"], weapon["width"], weapon["height"], weapon["bulletamount"], weapon["bulletspread"])
+				shootingIntervals[i] = 0
+
+		# Shoot the target if one exists and mouse is not pressed, otherwise point at cursor
+		elif target:
 			angle = global_position.angle_to_point(target.global_position) + PI/2
 			rotation = angle
 		
@@ -88,7 +101,11 @@ func _shoot(bulletScene: PackedScene, bulletTarget: PhysicsBody2D, bulletSpeed: 
 	}
 	for j in range(bulletAmount):
 		var bulletInstance: RigidBody2D = bulletScene.instantiate()
-		var bulletAngle: float = global_position.angle_to_point(bulletTarget.global_position)
+		var bulletAngle: float
+		if bulletTarget != null:
+			bulletAngle = global_position.angle_to_point(bulletTarget.global_position)
+		else:
+			bulletAngle = global_position.angle_to_point(get_global_mouse_position())
 		bulletAngle += randf_range(-bulletSpread, bulletSpread)
 		
 		var bulletVector: Vector2 = Vector2(cos(bulletAngle), sin(bulletAngle)) * bulletSpeed

@@ -2,18 +2,20 @@ extends Node
 
 var won: bool = false # True if player has won the game
 var currency: int = 0 # Currency for unlocking new characters
+var unlocked_characters: Array = [0]
 
 # Player texture filepath
 var player_skin: String = "res://Assets/Textures/Player/PlayerModelLongGun.png"
 
-var max_health = 1000
-var health = 1000
+var max_health = 750
+var health = 750
 var xp = 0
 var time = 0
 var wave = 1
 var enemies_left = 0
 var level = 0
 var starter_weapon = 0 #id på starterweapon
+var speed = 300
 
 #Upgrade variabler
 var damage_multiplier = 1 			#Damage multiplier, adds 0.2 or 20% per level on the multiplier

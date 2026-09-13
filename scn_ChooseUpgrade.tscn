@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b2jgybetg8xm5" path="res://Assets/Scripts/scr_ChooseUpgrade.gd" id="1_0aq04"]
 [ext_resource type="Script" uid="uid://0qxece3uuwc1" path="res://Assets/Scripts/scr_GetUpgrades.gd" id="1_wawnv"]
+[ext_resource type="StyleBox" uid="uid://cjebhhngcodv2" path="res://Assets/Resources/UI/res_UpgradeBase.tres" id="2_yxyxk"]
+[ext_resource type="StyleBox" uid="uid://nhqn1370qpa" path="res://Assets/Resources/UI/res_UpgradePressed.tres" id="3_vavv0"]
+[ext_resource type="StyleBox" uid="uid://bk45ax8rpj6l5" path="res://Assets/Resources/UI/res_UpgradeHover.tres" id="4_hly50"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0aq04"]
 
@@ -37,6 +40,9 @@ layout_mode = 2
 [node name="Button" type="Button" parent="HBox/MarginContainer_Upgrade1" unique_id=786222981]
 process_mode = 3
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_yxyxk")
+theme_override_styles/pressed = ExtResource("3_vavv0")
+theme_override_styles/hover = ExtResource("4_hly50")
 script = ExtResource("1_0aq04")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBox/MarginContainer_Upgrade1/Button" unique_id=1709816685]
@@ -102,6 +108,9 @@ layout_mode = 2
 [node name="Button" type="Button" parent="HBox/MarginContainer_Upgrade2" unique_id=1728297460]
 process_mode = 3
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_yxyxk")
+theme_override_styles/pressed = ExtResource("3_vavv0")
+theme_override_styles/hover = ExtResource("4_hly50")
 script = ExtResource("1_0aq04")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBox/MarginContainer_Upgrade2/Button" unique_id=566451232]
@@ -168,6 +177,9 @@ layout_mode = 2
 [node name="Button" type="Button" parent="HBox/MarginContainer_Upgrade3" unique_id=2072089291]
 process_mode = 3
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_yxyxk")
+theme_override_styles/pressed = ExtResource("3_vavv0")
+theme_override_styles/hover = ExtResource("4_hly50")
 script = ExtResource("1_0aq04")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBox/MarginContainer_Upgrade3/Button" unique_id=1260158638]

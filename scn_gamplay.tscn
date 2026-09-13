@@ -27,7 +27,6 @@ collision_layer = 3
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("2_t24il")
-speed = 300.0
 
 [node name="col_PlayerCollider" type="CollisionShape2D" parent="obj_Player" unique_id=314141808]
 scale = Vector2(2, 2)

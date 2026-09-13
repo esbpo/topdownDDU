@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://uy3rbpk5b4d2" path="res://Assets/Scripts/UI/scr_ExitGame.gd" id="2_n8vst"]
 [ext_resource type="StyleBox" uid="uid://bwq5gxwbxhjrs" path="res://Assets/Resources/UI/res_MenuButtonPressed.tres" id="2_rbdih"]
 [ext_resource type="StyleBox" uid="uid://cap7n6h3vny2r" path="res://Assets/Resources/UI/res_MenuButtonHover.tres" id="3_v8qnv"]
+[ext_resource type="Script" uid="uid://coqxbwturov8y" path="res://Assets/Scripts/UI/scr_GoToSelectCharacter.gd" id="6_um8j4"]
 
 [node name="root_StartScreen" type="PanelContainer" unique_id=1326589324]
 anchors_preset = 15
@@ -34,7 +35,7 @@ action_mode = 0
 text = "Start"
 script = ExtResource("1_fy8el")
 
-[node name="btn_Settings" type="Button" parent="VBoxContainer" unique_id=2079595486]
+[node name="btn_CharacterSelector" type="Button" parent="VBoxContainer" unique_id=2079595486]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -44,6 +45,7 @@ theme_override_styles/pressed = ExtResource("2_rbdih")
 theme_override_styles/hover = ExtResource("3_v8qnv")
 action_mode = 0
 text = "Settings"
+script = ExtResource("6_um8j4")
 
 [node name="btn_Exit" type="Button" parent="VBoxContainer" unique_id=552443187]
 layout_mode = 2
