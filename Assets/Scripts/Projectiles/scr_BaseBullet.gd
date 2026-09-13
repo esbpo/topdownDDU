@@ -37,4 +37,4 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 func _on_body_entered(body: Node) -> void:
 	if "health" in body:
 		body.health -= damage
-	queue_free()
+		queue_free()

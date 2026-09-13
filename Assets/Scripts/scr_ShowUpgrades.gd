@@ -11,12 +11,13 @@ func _ready() -> void:
 	upgradesAvailable = len(upgradeDict)
 
 
-func ShowUpgrades():
+func ShowUpgrades(): 
 	instance = scene.instantiate()
 	add_child(instance)
 	instance.Upgrade()
 	visible = true
-	get_tree().paused = true
+	#Pauses the game so player has time to think when choosing
+	get_tree().paused = true #Also works to stop upgrade choices overlapping if player somehow levels up twice
 	
 func HideUpgrades():
 	instance.queue_free()

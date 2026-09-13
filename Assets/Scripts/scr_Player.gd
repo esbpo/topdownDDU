@@ -4,17 +4,34 @@ extends CharacterBody2D
 
 # Bullet scenes
 @onready var baseBulletScene = preload("res://Assets/Resources/res_BaseBullet.tscn")
+#defined as "type": "basic" in Weapons.json
 @onready var pierceBulletScene = preload("res://Assets/Resources/res_PierceBullet.tscn")
+#defined as "type": "pierce" in Weapons.json
 @onready var truePierceBulletScene = preload("res://Assets/Resources/res_TruePierceBullet.tscn")
+#defined as "type": "truePierce" in Weapons.json
 @onready var spawnBulletScene = preload("res://Assets/Resources/res_SpawnBullet.tscn")
+#defined as "type": "spawn" in Weapons.json
 
-@onready var weaponJson = FileAccess.get_file_as_string("res://Data/Weapons.json")
+@onready var weaponJson: String = FileAccess.get_file_as_string("res://Data/Weapons.json")
+var weaponArray: Array = []
 
 var target: RigidBody2D
 var angle: float
-var shootingInterval: float = 0
-@export var firerate: float = 1 # Firerate in shots/second
 
+var shootingIntervals: Array = []
+var firerates: Array = [] # Firerate in shots/second
+var weapons: Array = [] # Equipped weapons
+
+func _ready() -> void:
+	weaponArray = JSON.parse_string(weaponJson)
+	Equip(0)
+#In Weapons.json the following id's refer to specified weapon
+#id - 0 = starter pistol
+#id - 1 = assault rifle
+#id - 2 = sniper rifle
+#id - 3 = shotgun
+#id - 4 = laser
+#id - 5 = flamethrower
 func GetInput():
 	var inputDirection = Input.get_vector("left", "right", "up", "down")
 	velocity = inputDirection * speed * Globals.movement_speed_multiplier
@@ -23,41 +40,36 @@ func _process(delta: float) -> void:
 	GetInput()
 	move_and_slide()
 
-# Shooting system
-	shootingInterval += delta
+	# Regenerate lost health
 	if Globals.health < Globals.max_health:
 		Globals.health += Globals.add_health_regen * delta
-	
-	# Shoot the target if one exists, otherwise point at cursor
-	# Rewrite when weapons definitions are created
-	if target:
-		angle = global_position.angle_to_point(target.global_position) + PI/2
-		rotation = angle
-		if shootingInterval >= 1 / (firerate * Globals.attack_speed_multiplier):
-			var damage = 10 * Globals.damage_multiplier
-			
-			# BaseBullet
-			_shoot(baseBulletScene, target, 1200, damage, 10, 2, 4)
-			
-			# PierceBullet
-			#_shoot(pierceBulletScene, target, 800, 100, 10)
-			
-			# TruePierceBullet
-			#_shoot(truePierceBulletScene, target, 0, damage, 0.5, 10, 500)
-			
-			# SpawnBullet (Ball spawn)
-			#_shoot(spawnBulletScene, target, 600, 10, 0.5, 1, 2, truePierceBulletScene, {"damage": 0,"movement": Vector2(),"lifetime": 100,"width": 150,"height": 150,"texture": PlaceholderTexture2D.new(), "damage_per_second": 5})
-			
-			shootingInterval = 0
-	else:
-		var mouse_position = get_global_mouse_position()
-		angle = global_position.angle_to_point(mouse_position) + PI/2
-		rotation = angle
 
+	# Shooting system
+	var i = 0
+	for interval in shootingIntervals:
+		shootingIntervals[i] += delta
+	
+		# Shoot the target if one exists, otherwise point at cursor
+		if target:
+			angle = global_position.angle_to_point(target.global_position) + PI/2
+			rotation = angle
+		
+			if interval >= 1 / (firerates[i] * Globals.attack_speed_multiplier):
+				var weapon = weapons[i]
+				var damage = weapon["damage"] * Globals.damage_multiplier
+				# BaseBullet
+				_shoot(weapon["type"], target, weapon["bulletspeed"], damage, 10, weapon["width"], weapon["height"])
+				shootingIntervals[i] = 0
+		else:
+			var mouse_position = get_global_mouse_position()
+			angle = global_position.angle_to_point(mouse_position) + PI/2
+			rotation = angle
+		i += 1
 	target = SelectNewTarget()
 	
 func _shoot(bulletScene: PackedScene, bulletTarget: PhysicsBody2D, bulletSpeed: float, 
-			damage: float, lifetime: float, width: float, height: float, spawn: PackedScene=null, spawn_data: Dictionary={}):
+			damage: float, lifetime: float, width: float, height: float, spawn: PackedScene=null, spawn_data: Dictionary={},
+			bullet_amount: int = 1, bullet_spread: float = 0):
 	var bulletInstance: RigidBody2D = bulletScene.instantiate()
 	var bulletVector: Vector2 = (bulletTarget.global_position - global_position).normalized() * bulletSpeed
 	var bulletData: Dictionary = {
@@ -68,7 +80,7 @@ func _shoot(bulletScene: PackedScene, bulletTarget: PhysicsBody2D, bulletSpeed: 
 		"height": height,
 		"texture": PlaceholderTexture2D.new(),
 		"spawn": spawn,
-		"spawn_data": spawn_data
+		"spawn_data": spawn_data,
 	}
 	
 	$"..".add_child(bulletInstance)
@@ -96,8 +108,7 @@ func SelectNewTarget() -> RigidBody2D:
 	# Iterates over targets to get closest enemy
 	for body in collisions:
 		# Ensure only enemies are targeted
-		if not ("health" in body): continue
-		
+		if not "health" in body: continue
 			
 		distance = global_position.distance_squared_to(body.global_position)
 		
@@ -109,7 +120,24 @@ func SelectNewTarget() -> RigidBody2D:
 	return new_target
 
 func Equip(id):
-	pass
+	var weapon = weaponArray[int(id)]
+	firerates.append(weapon["firerate"])
+	shootingIntervals.append(0)
+	weapons.append(weapon)
+	
+	match weapon["type"]:
+		"basic": 
+			weapon["type"] = baseBulletScene 
+		"pierce":
+			weapon["type"] = pierceBulletScene
+		"truePierce":
+			weapon["type"] = truePierceBulletScene
+
+#Basic bullet is used for following: Starter pistol, Assault rifle, Shotgun, 
+#Pierce bullet is used for following: Sniper,
+#True pierce bullet is used for following: Laser,
+
+
 
 # Unnescessary with runtime targeting
 #func _on_area_player_max_range_body_entered(body: Node2D) -> void:

@@ -10,24 +10,24 @@ var data
 @onready var levelStars = $"VBoxContainer/MarginContainer_level/HBoxContainer"
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func _ready() -> void: #placeholder for testing layout
 	title.text = "Bonk" 
 	image.texture = PlaceholderTexture2D.new()
 	description.text = "Stat: +/- x\nStat2: +/. x%"
 	
-func update():
+func update(): #gets det upgradechoices meta data to display things like title, description and icon depending on the upgrade
 	data = get_meta("Data")
 	print(data)
 	title.text = data["title"]
 	description.text = data["description"]
 	image.texture = load(data["icon"])
 	
-	for star in range (data["level"]): #this for loop creates n filled levelStars depending og the level of the upgrade
+	for star in range (data["level"]): #this for-loop creates n filled levelStars depending og the level of the upgrade
 		#and creates x empty stars depending on the upgrades maxlevel - level
 		var filledStar = TextureRect.new()
 		filledStar.texture = load("res://Assets/Textures/Upgrade/star_filled.png")
-		filledStar.size_flags_horizontal = TextureRect.PRESET_MODE_KEEP_SIZE
-		filledStar.size_flags_vertical = Control.SIZE_FILL
+		filledStar.size_flags_horizontal = TextureRect.PRESET_MODE_KEEP_SIZE 
+		filledStar.size_flags_vertical = Control.SIZE_FILL 
 		filledStar.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		filledStar.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		levelStars.add_child(filledStar)
