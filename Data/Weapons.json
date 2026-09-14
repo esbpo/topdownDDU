@@ -27,7 +27,7 @@
 	},
 	{
 		"id": 2,
-		"firerate": 0.25,
+		"firerate": 0.35,
 		"bulletspeed": 1600,
 		"damage": 100,
 		"width": 4,
@@ -53,7 +53,7 @@
 	},
 	{
 		"id": 4,
-		"firerate": 0.20,
+		"firerate": 0.30,
 		"bulletspeed": 0,
 		"damage": 80,
 		"width": 2,
@@ -67,14 +67,14 @@
 	{
 		"id": 5,
 		"firerate": 100,
-		"bulletspeed": 600,
-		"damage": 80,
+		"bulletspeed": 300,
+		"damage": 0.8,
 		"width": 20,
 		"height": 6,
 		"type": "truePierce",
 		"lifetime": 0.5,
 		"texture": null,
 		"bulletamount": 1,
-		"bulletspread": 0.08726646
+		"bulletspread": 1.047198
 	},
 ]
