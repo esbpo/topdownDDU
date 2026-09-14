@@ -33,7 +33,7 @@ func update(): #gets det upgradechoices meta data to display things like title, 
 		
 	for star in range (data["maxlevel"]-data["level"]):
 		var emptyStar = TextureRect.new()
-		emptyStar.texture = load("res://Assets/Textures/Upgrade/star_empty.png") #
+		emptyStar.texture = load("res://Assets/Textures/Upgrade/star_empty.png") 
 		emptyStar.size_flags_horizontal = TextureRect.PRESET_MODE_KEEP_SIZE
 		emptyStar.size_flags_vertical = Control.SIZE_FILL 
 		emptyStar.expand_mode = TextureRect.EXPAND_IGNORE_SIZE

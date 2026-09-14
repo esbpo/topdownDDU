@@ -1,0 +1,29 @@
+{
+	"0":{
+		"id": "0",
+		"title": "Assault rifle",
+		"weapon_id": 1,
+		"level": 0,
+		"maxlevel": 1,
+		"description": "Unlocks assault rifle",
+		"icon": "res://Assets/Textures/Upgrade/AbilityUpgradeBackground.png"
+	},
+	"1":{
+		"id": "1",
+		"title": "Sniper",
+		"weapon_id": 2,
+		"level": 0,
+		"maxlevel": 1,
+		"description": "Unlocks Sniper rifle",
+		"icon": "res://Assets/Textures/Upgrade/AbilityUpgradeBackground.png"
+	},
+	"2":{
+		"id": "2",
+		"title": "Shotgun",
+		"weapon_id": 3,
+		"level": 0,
+		"maxlevel": 1,
+		"description": "Unlocks shotgun",
+		"icon": "res://Assets/Textures/Upgrade/AbilityUpgradeBackground.png"
+	},
+}
