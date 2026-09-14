@@ -17,7 +17,6 @@ func _ready() -> void: #placeholder for testing layout
 	
 func update(): #gets det upgradechoices meta data to display things like title, description and icon depending on the upgrade
 	data = get_meta("Data")
-	print(data)
 	title.text = data["title"]
 	description.text = data["description"]
 	image.texture = load(data["icon"])

@@ -62,7 +62,7 @@ func _process(_delta: float) -> void:
 	# If enemy is dead, remove and add experience
 	if health <= 0:
 		Globals.enemies_left -= 1
-		Globals.xp += experience + 10000
+		Globals.xp += experience 
 		queue_free()
 
 # If player hits the enemy, deal damage

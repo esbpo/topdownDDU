@@ -35,6 +35,7 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	linear_velocity = movement
 
 func _on_body_entered(body: Node) -> void:
-	if "health" in body:
+	if "health" in body and body != $"/root/Node2D/obj_Player":
+		
 		body.health -= damage
 		queue_free()
