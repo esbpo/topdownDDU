@@ -16,6 +16,7 @@ var enemies_left = 0
 var level = 0
 var starter_weapon = 0 #id på starterweapon
 var speed = 300
+var totalXp = 0
 
 #Upgrade variabler
 var damage_multiplier = 1 			#Damage multiplier, adds 0.2 or 20% per level on the multiplier

@@ -67,6 +67,7 @@ func _process(_delta: float) -> void:
 	if health <= 0:
 		Globals.enemies_left -= 1
 		Globals.xp += experience + 10000
+		Globals.totalXp += experience
 		queue_free()
 
 # If player hits the enemy, deal damage

@@ -1,4 +1,5 @@
-extends Control
+extends CanvasLayer
+
 
 func ShowStatMenu():
 	visible = true
@@ -7,3 +8,7 @@ func ShowStatMenu():
 func HideStatMenu():
 	visible = false
 	get_tree().paused = false
+
+func _input(event):
+	if event.is_action_pressed("ui_close_dialog"):
+		HideStatMenu()

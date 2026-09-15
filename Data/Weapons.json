@@ -69,12 +69,12 @@
 		"firerate": 100,
 		"bulletspeed": 300,
 		"damage": 0.8,
-		"width": 20,
+		"width": 30,
 		"height": 6,
 		"type": "truePierce",
 		"lifetime": 0.5,
 		"texture": null,
 		"bulletamount": 1,
-		"bulletspread": 1.047198
+		"bulletspread": 0.35
 	},
 ]

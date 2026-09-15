@@ -1,8 +1,22 @@
 [gd_scene format=3 uid="uid://dxcq1ursg74ql"]
 
-[ext_resource type="Script" uid="uid://13d264kb7emj" path="res://Assets/Scripts/scr_ShowStatMenu.gd" id="1_geeoh"]
+[ext_resource type="Texture2D" uid="uid://wduse8wsr3fk" path="res://Assets/Textures/Player/PlayerModelHandgun.png" id="2_gmtvm"]
+[ext_resource type="Script" uid="uid://bk27cbuoqwfmc" path="res://Assets/Scripts/Statmenu/scr_CharacterIcon.gd" id="3_nawh2"]
+[ext_resource type="Script" uid="uid://6n2aoo7dbirl" path="res://Assets/Scripts/Statmenu/scr_LabelXp.gd" id="4_01j26"]
+[ext_resource type="Script" uid="uid://5cic6w7lgai5" path="res://Assets/Scripts/Statmenu/scr_LevelStatMenu.gd" id="4_nawh2"]
+[ext_resource type="Script" uid="uid://bmnjpla37sicw" path="res://Assets/Scripts/Statmenu/lbl_TotalXp.gd" id="5_01j26"]
+[ext_resource type="Script" uid="uid://bp6li6shfmqwc" path="res://lbl_Wave.gd" id="6_pdr7g"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_geeoh"]
+[sub_resource type="GDScript" id="GDScript_gmtvm"]
+script/source = "extends Control
+
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jalkb"]
 
@@ -14,14 +28,12 @@
 
 [node name="scn_StatMenu" type="Control" unique_id=367605091]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_geeoh")
+script = SubResource("GDScript_gmtvm")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1129720433]
 custom_minimum_size = Vector2(800, 600)
@@ -40,113 +52,141 @@ grow_vertical = 2
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="gameStats_MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1282803459]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=179024563]
 layout_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/gameStats_MarginContainer" unique_id=653037363]
-custom_minimum_size = Vector2(300, 0)
+[node name="gameStats_MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer" unique_id=1282803459]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer" unique_id=653037363]
+custom_minimum_size = Vector2(340, 600)
 custom_maximum_size = Vector2(300, -1)
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="chosenCharacter_MarginContainer" type="MarginContainer" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2" unique_id=784579869]
+[node name="chosenCharacter_MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2" unique_id=784579869]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+theme_override_constants/margin_top = 0
 
-[node name="img_characterIcon" type="TextureRect" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2/chosenCharacter_MarginContainer" unique_id=416003267]
+[node name="img_characterIcon" type="TextureRect" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/chosenCharacter_MarginContainer" unique_id=416003267]
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_geeoh")
+texture = ExtResource("2_gmtvm")
 stretch_mode = 5
+script = ExtResource("3_nawh2")
 
-[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2" unique_id=1405128226]
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2" unique_id=1405128226]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2" unique_id=341466675]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2" unique_id=341466675]
 layout_mode = 2
 
-[node name="lbl_enemiesKilled" type="Label" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer" unique_id=1893764501]
+[node name="lbl_enemiesKilled" type="Label" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer" unique_id=1893764501]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Enemies killed"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer" unique_id=681646607]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer" unique_id=681646607]
 layout_mode = 2
 theme_override_constants/separation = 4
 alignment = 1
 
-[node name="img_square" type="TextureRect" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1108195242]
+[node name="img_square" type="TextureRect" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1108195242]
 custom_minimum_size = Vector2(50, 50)
 custom_maximum_size = Vector2(50, 50)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_jalkb")
 
-[node name="lbl_squaresKilled" type="Label" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1843650570]
+[node name="lbl_squaresKilled" type="Label" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1843650570]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 text = "100"
 
-[node name="img_circle" type="TextureRect" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1235822772]
+[node name="img_circle" type="TextureRect" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1235822772]
 custom_minimum_size = Vector2(50, 50)
 custom_maximum_size = Vector2(50, 50)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_6cw5p")
 
-[node name="lbl_circlesKilled" type="Label" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=932841268]
+[node name="lbl_circlesKilled" type="Label" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=932841268]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 text = "40"
 
-[node name="img_triangle" type="TextureRect" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=992601952]
+[node name="img_triangle" type="TextureRect" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=992601952]
 custom_minimum_size = Vector2(50, 50)
 custom_maximum_size = Vector2(50, 50)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_6pqxs")
 
-[node name="lbl_trianglesKilled" type="Label" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1108585298]
+[node name="lbl_trianglesKilled" type="Label" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1108585298]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 text = "230"
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2" unique_id=1158684173]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2" unique_id=1158684173]
 custom_minimum_size = Vector2(300, 300)
 custom_maximum_size = Vector2(300, -1)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer" unique_id=1972088338]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer" unique_id=1972088338]
 layout_mode = 2
 
-[node name="lbl_level" type="Label" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer" unique_id=2000364750]
+[node name="lbl_level" type="Label" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer" unique_id=2000364750]
 layout_mode = 2
-text = "Level: 10"
+theme_override_font_sizes/font_size = 24
+text = "Level: 10
+"
+script = ExtResource("4_nawh2")
 
-[node name="lbl_xp" type="Label" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer" unique_id=639038855]
+[node name="lbl_xp" type="Label" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer" unique_id=639038855]
 layout_mode = 2
-text = "xp to next level: 40/100"
+theme_override_font_sizes/font_size = 24
+text = "xp to next level: 40/100
+"
+script = ExtResource("4_01j26")
 
-[node name="lbl_totalXp" type="Label" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer" unique_id=369658610]
+[node name="lbl_totalXp" type="Label" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer" unique_id=369658610]
 layout_mode = 2
-text = "Total xp: 1000"
+theme_override_font_sizes/font_size = 24
+text = "Total xp: 1000
+"
+script = ExtResource("5_01j26")
 
-[node name="lbl_wave" type="Label" parent="HBoxContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer" unique_id=203265633]
+[node name="lbl_wave" type="Label" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer" unique_id=203265633]
 layout_mode = 2
-text = "Wave: 4"
+theme_override_font_sizes/font_size = 24
+text = "Wave: 4
+"
+script = ExtResource("6_pdr7g")
 
-[node name="characterStats_MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=2026908205]
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer" unique_id=1811567024]
 layout_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/characterStats_MarginContainer" unique_id=2005211549]
-custom_minimum_size = Vector2(400, 0)
+[node name="characterStats_MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer2" unique_id=2026908205]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer" unique_id=2005211549]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="lbl_upgradesChosen" type="Label" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2" unique_id=2146416409]
+[node name="lbl_upgradesChosen" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2" unique_id=2146416409]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Upgrades Chosen"
 horizontal_alignment = 1
 
-[node name="chosenUpgrades_Grid" type="GridContainer" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2" unique_id=1179017457]
+[node name="chosenUpgrades_Grid" type="GridContainer" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2" unique_id=1179017457]
 custom_minimum_size = Vector2(0, 240)
 custom_maximum_size = Vector2(400, 240)
 layout_mode = 2
@@ -155,127 +195,140 @@ theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 columns = 6
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=218877685]
+[node name="img_upgrade1" type="TextureRect" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=218877685]
 custom_minimum_size = Vector2(40, 40)
 custom_maximum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_0511e")
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=1282691004]
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=1282691004]
 custom_minimum_size = Vector2(40, 40)
 custom_maximum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_0511e")
 
-[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=1209960655]
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=1209960655]
 custom_minimum_size = Vector2(40, 40)
 custom_maximum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_0511e")
 
-[node name="TextureRect4" type="TextureRect" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=2024897900]
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=2024897900]
 custom_minimum_size = Vector2(40, 40)
 custom_maximum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_0511e")
 
-[node name="TextureRect5" type="TextureRect" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=2079471394]
+[node name="TextureRect5" type="TextureRect" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=2079471394]
 custom_minimum_size = Vector2(40, 40)
 custom_maximum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_0511e")
 
-[node name="TextureRect6" type="TextureRect" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=2054757655]
+[node name="TextureRect6" type="TextureRect" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=2054757655]
 custom_minimum_size = Vector2(40, 40)
 custom_maximum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_0511e")
 
-[node name="TextureRect7" type="TextureRect" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=202190394]
+[node name="TextureRect7" type="TextureRect" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=202190394]
 custom_minimum_size = Vector2(40, 40)
 custom_maximum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_0511e")
 
-[node name="TextureRect8" type="TextureRect" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=953377412]
+[node name="TextureRect8" type="TextureRect" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=953377412]
 custom_minimum_size = Vector2(40, 40)
 custom_maximum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_0511e")
 
-[node name="TextureRect9" type="TextureRect" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=777573409]
+[node name="TextureRect9" type="TextureRect" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=777573409]
 custom_minimum_size = Vector2(40, 40)
 custom_maximum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_0511e")
 
-[node name="TextureRect10" type="TextureRect" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=1984737125]
+[node name="TextureRect10" type="TextureRect" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=1984737125]
 custom_minimum_size = Vector2(40, 40)
 custom_maximum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_0511e")
 
-[node name="TextureRect11" type="TextureRect" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=1664504846]
+[node name="TextureRect11" type="TextureRect" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid" unique_id=1664504846]
 custom_minimum_size = Vector2(40, 40)
 custom_maximum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_0511e")
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2" unique_id=544855851]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2" unique_id=544855851]
 layout_mode = 2
 theme_override_constants/margin_bottom = 20
 
-[node name="HBox_upgrades" type="HBoxContainer" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/MarginContainer" unique_id=486073682]
+[node name="HBox_upgrades" type="HBoxContainer" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer" unique_id=486073682]
 custom_minimum_size = Vector2(0, 280)
 custom_maximum_size = Vector2(-1, 280)
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="VBox_stats" type="VBoxContainer" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades" unique_id=1541593792]
+[node name="VBox_stats" type="VBoxContainer" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades" unique_id=1541593792]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="lbl_stats" type="Label" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=253276740]
+[node name="lbl_stats" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=253276740]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Stats"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=535327687]
+[node name="lbl_baseHealth" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=2068014446]
 layout_mode = 2
-text = "Stat 1:"
+theme_override_font_sizes/font_size = 20
+text = "Base health: "
 
-[node name="Label2" type="Label" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=774442057]
+[node name="lbl_health" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=1880918113]
 layout_mode = 2
-text = "Stat 1:"
+theme_override_font_sizes/font_size = 20
+text = "Actual health:"
 
-[node name="Label3" type="Label" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=1943499397]
+[node name="lbl_damage" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=2129294696]
 layout_mode = 2
-text = "Stat 1:"
+theme_override_font_sizes/font_size = 20
+text = "Damage modifier:"
 
-[node name="Label4" type="Label" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=1612740682]
+[node name="lbl_attackSpeed" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=572869504]
 layout_mode = 2
-text = "Stat 1:"
+theme_override_font_sizes/font_size = 20
+text = "Attack speed:"
 
-[node name="VBox_weapons" type="VBoxContainer" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades" unique_id=1724747931]
+[node name="lbl_movementSpeed" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=341573022]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Movement speed:"
+
+[node name="lbl_regen" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=1786121065]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Health regen:"
+
+[node name="VBox_weapons" type="VBoxContainer" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades" unique_id=1724747931]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="lbl_weapons" type="Label" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_weapons" unique_id=1965462061]
+[node name="lbl_weapons" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_weapons" unique_id=1965462061]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Weapons"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_weapons" unique_id=2017843420]
+[node name="lbl_weaponsUnlocked" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_weapons" unique_id=2017843420]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Starting weapon:"
 
-[node name="Label2" type="Label" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_weapons" unique_id=2057840311]
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2" unique_id=1763961211]
 layout_mode = 2
-text = "Weapon 2:"
-
-[node name="Label3" type="Label" parent="HBoxContainer/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_weapons" unique_id=1798754761]
-layout_mode = 2
-text = "Weapon 3"
+theme_override_font_sizes/font_size = 24
+text = "Press escape to close stat menu"
+horizontal_alignment = 1

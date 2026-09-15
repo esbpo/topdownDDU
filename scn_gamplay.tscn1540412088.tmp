@@ -55,11 +55,14 @@ visible = false
 script = ExtResource("7_n40bc")
 
 [node name="can_StatMenu" type="CanvasLayer" parent="." unique_id=1672915461]
-process_mode = 3
-visible = false
 script = ExtResource("7_81ujb")
 
 [node name="scn_StatMenu" parent="can_StatMenu" unique_id=367605091 instance=ExtResource("7_vchuf")]
+offset_left = -640.0
+offset_top = -360.0
+offset_right = -640.0
+offset_bottom = -360.0
+script = null
 
 [connection signal="body_entered" from="obj_Player/area_PlayerMaxRange" to="obj_Player" method="_on_area_player_max_range_body_entered"]
 [connection signal="body_exited" from="obj_Player/area_PlayerMaxRange" to="obj_Player" method="_on_area_player_max_range_body_exited"]
