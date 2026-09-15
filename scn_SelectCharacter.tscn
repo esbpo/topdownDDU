@@ -51,6 +51,7 @@ icon_alignment = 1
 script = ExtResource("5_rmso6")
 speed = 300
 health = 750
+skin = "res://Assets/Textures/Player/PlayerModelHandgun.png"
 
 [node name="vbox_InfoContainer" type="VBoxContainer" parent="hbox_ButtonContainer/btn_PlayerHandgun" unique_id=624575630]
 layout_mode = 1
@@ -110,6 +111,7 @@ speed = 250
 health = 1000
 price = 25
 weapon = 1
+skin = "res://Assets/Textures/Player/PlayerModelLongGun.png"
 
 [node name="vbox_InfoContainer" type="VBoxContainer" parent="hbox_ButtonContainer/btn_PlayerLongGun" unique_id=902560879]
 layout_mode = 1
