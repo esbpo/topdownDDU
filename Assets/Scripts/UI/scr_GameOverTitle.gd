@@ -1,15 +1,37 @@
 extends Label
 
 func StoreData():
-	var health_over_time = FileAccess.open("user://health_over_time.csv", FileAccess.WRITE)
+	var userId = str(randi())
 	
-
+	var hot_path = "user://savedata/hot/" + userId + "health_over_time.csv"
+	var hot = FileAccess.open(hot_path, FileAccess.WRITE)
+	hot.store_csv_line(Globals.health_over_time)
+	
+	var uot_path = "user://savedata/uot/" + userId + "upgrades_over_time.csv"
+	var uot = FileAccess.open(uot_path, FileAccess.WRITE)
+	uot.store_csv_line(Globals.upgrades_over_time)
+	
+	var epl_path = "user://savedata/epl/" + userId + "enemies_per_level.csv"
+	var epl = FileAccess.open(epl_path, FileAccess.WRITE)
+	epl.store_csv_line(Globals.enemies_killed_per_level)
+	
+	var misc_path = "user://savedata/misc/" + userId + "misc.csv"
+	var misc = FileAccess.open(misc_path, FileAccess.WRITE)
+	
+	var enemies_killed_total = 0
+	for key in Globals.enemies_killed.keys():
+		enemies_killed_total += Globals.enemies_killed[key]
+		
+	var misc_data = [Globals.time, enemies_killed_total, Globals.won, Globals.level]
+	misc.store_csv_line(misc_data)
+	
 func _ready() -> void:
 	if Globals.won:
 		text = "You Win"
 	else:
 		text = "Game Over"
 		
+	StoreData()
 	Globals.currency += Globals.wave - 1
 	Globals.wave = 1
 	Globals.health = Globals.max_health

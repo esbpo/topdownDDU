@@ -10,5 +10,6 @@ func HideStatMenu():
 	get_tree().paused = false
 
 func _input(event):
-	if event.is_action_pressed("ui_close_dialog"):
-		HideStatMenu()
+	if visible == true:
+		if event.is_action_pressed("ui_close_dialog"):
+			HideStatMenu()

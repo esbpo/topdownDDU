@@ -6,7 +6,8 @@
 		"level": 0,
 		"maxlevel": 5,
 		"description": "+ 20% Damage",
-		"icon": "res://Assets/Textures/Upgrade/DamageUpgrade.png"
+		"icon": "res://Assets/Textures/Upgrade/DamageUpgrade.png",
+		"dict": "upgrade"
 	},
 	"1":{
 		"id": "1",
@@ -15,7 +16,8 @@
 		"level": 0,
 		"maxlevel": 5,
 		"description": "+ 10% Attack Speed",
-		"icon": "res://Assets/Textures/Upgrade/OffensiveUpgradeBackground.png"
+		"icon": "res://Assets/Textures/Upgrade/OffensiveUpgradeBackground.png",
+		"dict": "upgrade"
 	},
 	"2":{
 		"id": "2",
@@ -24,16 +26,18 @@
 		"level": 0,
 		"maxlevel": 5,
 		"description": "+ 25% Health",
-		"icon": "res://Assets/Textures/Upgrade/HealthUpgrade.png"
+		"icon": "res://Assets/Textures/Upgrade/HealthUpgrade.png",
+		"dict": "upgrade"
 	},
 	"3":{
 		"id": "3",
 		"title": "Base Health Up",
-		"basehealth": 100,
+		"basehealth": 200,
 		"level": 0,
 		"maxlevel": 5,
-		"description": "+ 100 Base Health",
-		"icon": "res://Assets/Textures/Upgrade/HealthUpgrade.png"
+		"description": "+ 200 Base Health",
+		"icon": "res://Assets/Textures/Upgrade/HealthUpgrade.png",
+		"dict": "upgrade"
 	},
 	"4":{
 		"id": "4",
@@ -42,7 +46,8 @@
 		"level": 0,
 		"maxlevel": 5,
 		"description": "+ 15% movement speed",
-		"icon": "res://Assets/Textures/Upgrade/MovementUpgradeBackground.png"
+		"icon": "res://Assets/Textures/Upgrade/MovementUpgradeBackground.png",
+		"dict": "upgrade"
 	},
 	"5":{
 		"id": "5",
@@ -51,6 +56,7 @@
 		"level": 0,
 		"maxlevel": 3,
 		"description": "+ 5 health pr. second",
-		"icon": "res://Assets/Textures/Upgrade/HealthUpgrade.png"
+		"icon": "res://Assets/Textures/Upgrade/HealthUpgrade.png",
+		"dict": "upgrade"
 	},
 }

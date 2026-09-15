@@ -14,6 +14,7 @@ func _process(_delta: float) -> void:
 		Globals.level += 1
 		max_value = GetXpCost(Globals.level)
 		max_value = round(max_value)
+		Globals.level_gained = true
 		LevelUp.ShowUpgrades()
 		
 		

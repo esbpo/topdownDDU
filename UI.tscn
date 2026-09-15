@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dk8npe556jr67" path="res://Assets/Scripts/UI/scr_SliderXpBar.gd" id="1_3b2b5"]
 [ext_resource type="StyleBox" uid="uid://dgqji3lbvjx5c" path="res://Assets/Resources/UI/res_MenuButtonBase.tres" id="1_27c8x"]
 [ext_resource type="Script" uid="uid://dwob0fsr0756x" path="res://Assets/Scripts/UI/scr_SliderHpBar.gd" id="1_b3bc3"]
-[ext_resource type="Script" uid="uid://bu723hytfvlio" path="res://Assets/Scripts/UI/scr_label_time.gd" id="1_g6l6n"]
+[ext_resource type="Script" uid="uid://bu723hytfvlio" path="res://Assets/Scripts/UI/scr_LabelTime.gd" id="1_g6l6n"]
 [ext_resource type="StyleBox" uid="uid://bwq5gxwbxhjrs" path="res://Assets/Resources/UI/res_MenuButtonPressed.tres" id="2_i1vam"]
 [ext_resource type="Script" uid="uid://dna4ktiya1bmj" path="res://Assets/Scripts/UI/scr_LabelRemainingEnemies.gd" id="2_qui0h"]
 [ext_resource type="StyleBox" uid="uid://cap7n6h3vny2r" path="res://Assets/Resources/UI/res_MenuButtonHover.tres" id="3_q77pa"]

@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 var speed: float = Globals.speed
 
+var dataCnt: float = 0
+
 # Bullet scenes
 #defined as "type": "basic" in Weapons.json
 @onready var baseBulletScene = preload("res://Assets/Resources/Bullets/res_BaseBullet.tscn")
@@ -42,6 +44,18 @@ func _process(delta: float) -> void:
 	if Globals.health <= 0:
 		Globals.LoseGame()
 		
+	dataCnt += delta
+	if dataCnt >= 1:
+		Globals.health_over_time.append(Globals.health)
+		if Globals.level_gained:
+			Globals.upgrades_over_time.append(Globals.upgrades[-1])
+			Globals.enemies_killed_per_level.append(Globals.intermittent_enemies_killed)
+			Globals.intermittent_enemies_killed = 0
+			Globals.level_gained = false
+		else:
+			Globals.upgrades_over_time.append("")
+		dataCnt = 0
+	
 	GetInput()
 	move_and_slide()
 

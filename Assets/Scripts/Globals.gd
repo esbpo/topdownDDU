@@ -14,18 +14,14 @@ var time = 0
 var wave = 1
 var enemies_left = 0
 var level = 0
-var starter_weapon = 4 #id på starterweapon
+var starter_weapon = 0 #id på starterweapon
 var speed = 300
+
+#Stat menu variables
 var totalXp = 0
+var enemies_killed = {"square":0, "circle":0, "triangle":0}
 
-var d:Dictionary = {}
-
-func _extend(d1:Dictionary, d2:Dictionary):
-	for key in d2.keys():
-		d1[key] = d2[key]
-	return d1
-
-#Upgrade variabler
+#Upgrade variables
 var damage_multiplier = 1 			#Damage multiplier, adds 0.2 or 20% per level on the multiplier
 var base_health = 0 				#Additional base health. adds 100 base health pr level of upgrade
 var health_multiplier = 1 			#Health multiplier, adds 0.25 or 25% per level to multiplier
@@ -37,6 +33,9 @@ var add_health_regen = 0 			#Health regen, add +5 health regen pr. level. max le
 var health_over_time = []
 var enemies_killed_per_level = []
 var upgrades = []
+var level_gained = false
+var intermittent_enemies_killed = 0
+var upgrades_over_time = []
 
 func WinGame():
 	won = true

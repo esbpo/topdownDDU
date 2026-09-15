@@ -58,8 +58,8 @@ func SpawnGroup(enemyId: int, enemyCount: int):
 		add_child(enemyInstance)
 		
 		# Minimum and maximum distance from the player
-		var min_dist = 1000
-		var max_dist = 1400
+		var min_dist = 750
+		var max_dist = 1250
 		
 		# Angle to spawn at
 		var spawn_angle = randf_range(0, 2*PI)

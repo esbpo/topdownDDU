@@ -68,7 +68,10 @@ func _process(_delta: float) -> void:
 		Globals.enemies_left -= 1
 		Globals.xp += experience
 		Globals.totalXp += experience
+		Globals.enemies_killed[shape] += 1
+		Globals.intermittent_enemies_killed += 1
 		queue_free()
+		
 
 # If player hits the enemy, deal damage
 func _on_body_entered(body: Node) -> void:
