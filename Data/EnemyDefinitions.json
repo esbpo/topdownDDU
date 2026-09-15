@@ -23,7 +23,7 @@
 	},
 	{
 		"id": 2,
-		"name": "BasicArrow",
+		"name": "BasicTriangle",
 		"shape": "triangle",
 		"health": 5,
 		"speed": 150,

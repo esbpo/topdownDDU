@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://3aoc5r62prqt"]
+
+[ext_resource type="StyleBox" uid="uid://dgqji3lbvjx5c" path="res://Assets/Resources/UI/res_MenuButtonBase.tres" id="1_7d2u8"]
+[ext_resource type="Script" uid="uid://bt1d8kg0lkb7v" path="res://Assets/Scripts/UI/scr_EndRun.gd" id="1_yqbck"]
+[ext_resource type="StyleBox" uid="uid://bwq5gxwbxhjrs" path="res://Assets/Resources/UI/res_MenuButtonPressed.tres" id="2_5lm4f"]
+[ext_resource type="StyleBox" uid="uid://cap7n6h3vny2r" path="res://Assets/Resources/UI/res_MenuButtonHover.tres" id="3_ss3ta"]
+[ext_resource type="Script" uid="uid://ch3irgsh5mrgx" path="res://Assets/Scripts/UI/scr_PauseMenuResume.gd" id="4_7gn2a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yclh7"]
+bg_color = Color(0, 0, 0, 0.78431374)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0.5019608, 0.5411765, 0.78431374)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqbck"]
+bg_color = Color(0.59607846, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ymnib"]
+bg_color = Color(0.8053871, 1.4439225e-06, 5.7756904e-07, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4y1a"]
+bg_color = Color(0.59607846, 0, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.3769486, 1.0829419e-06, 6.256998e-07, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="ScnPauseMenu" type="Control" unique_id=1475947513]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pan_Background" type="PanelContainer" parent="." unique_id=681857037]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yclh7")
+
+[node name="mar_SideMargins" type="MarginContainer" parent="pan_Background" unique_id=663028056]
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 30
+
+[node name="vbox_MenuAlign" type="VBoxContainer" parent="pan_Background/mar_SideMargins" unique_id=1236920738]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="lbl_Title" type="Label" parent="pan_Background/mar_SideMargins/vbox_MenuAlign" unique_id=1428129465]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Game Paused"
+horizontal_alignment = 1
+
+[node name="btn_Resume" type="Button" parent="pan_Background/mar_SideMargins/vbox_MenuAlign" unique_id=321473217]
+custom_minimum_size = Vector2(300, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("1_7d2u8")
+theme_override_styles/pressed = ExtResource("2_5lm4f")
+theme_override_styles/hover = ExtResource("3_ss3ta")
+text = "Resume"
+script = ExtResource("4_7gn2a")
+
+[node name="btn_EndRun" type="Button" parent="pan_Background/mar_SideMargins" unique_id=687917033]
+custom_minimum_size = Vector2(300, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_yqbck")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ymnib")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e4y1a")
+text = "End Run"
+script = ExtResource("1_yqbck")

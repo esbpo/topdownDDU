@@ -14,7 +14,7 @@ var time = 0
 var wave = 1
 var enemies_left = 0
 var level = 0
-var starter_weapon = 2 #id på starterweapon
+var starter_weapon = 0 #id på starterweapon
 var speed = 300
 var totalXp = 0
 
@@ -26,5 +26,10 @@ var attack_speed_multiplier = 1		#Attack speed multiplier, adds 0.1 or 10% pr. l
 var movement_speed_multiplier = 1 	#Movement speed multiplier, adds 0.15 or 15% pr. upgrade level
 var add_health_regen = 0 			#Health regen, add +5 health regen pr. level. max level = 3
 
-func _ready():
-	print(Color.RED, Color.AQUA, Color.HOT_PINK)
+func WinGame():
+	won = true
+	get_tree().call_deferred("change_scene_to_file","res://scn_GameOverScreen.tscn")
+	
+func LoseGame():
+	won = false
+	get_tree().call_deferred("change_scene_to_file","res://scn_GameOverScreen.tscn")

@@ -18,13 +18,13 @@ func _process(_delta: float) -> void:
 		add_theme_stylebox_override("normal", baseStyle)
 		
 	if not weapon in Globals.unlocked_characters and Globals.currency < price:
-		remove_theme_stylebox_override("normal")
-		remove_theme_stylebox_override("hover")
-		remove_theme_stylebox_override("pressed")
+		disabled = true
 	elif not weapon in Globals.unlocked_characters and Globals.currency >= price:
+		disabled = false
 		add_theme_stylebox_override("hover", hoverStyle)
 		add_theme_stylebox_override("pressed", hoverStyle)
 	else:
+		disabled = false
 		add_theme_stylebox_override("normal", baseStyle)
 		add_theme_stylebox_override("hover", hoverStyle)
 		add_theme_stylebox_override("pressed", hoverStyle)

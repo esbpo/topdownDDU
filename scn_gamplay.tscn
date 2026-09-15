@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://13d264kb7emj" path="res://Assets/Scripts/Statmenu/scr_ShowStatMenu.gd" id="7_81ujb"]
 [ext_resource type="Script" uid="uid://beu60ulx3tsie" path="res://Assets/Scripts/scr_ShowUpgrades.gd" id="7_n40bc"]
 [ext_resource type="PackedScene" uid="uid://dxcq1ursg74ql" path="res://scn_StatMenu.tscn" id="7_vchuf"]
+[ext_resource type="PackedScene" uid="uid://3aoc5r62prqt" path="res://scn_PauseMenu.tscn" id="9_81ujb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_epa72"]
 radius = 8.5
@@ -60,6 +61,14 @@ visible = false
 script = ExtResource("7_81ujb")
 
 [node name="scn_StatMenu" parent="can_StatMenu" unique_id=367605091 instance=ExtResource("7_vchuf")]
+
+[node name="can_PauseMenu" type="CanvasLayer" parent="." unique_id=693528729]
+process_mode = 3
+layer = 2
+visible = false
+script = ExtResource("7_81ujb")
+
+[node name="ScnPauseMenu" parent="can_PauseMenu" unique_id=1475947513 instance=ExtResource("9_81ujb")]
 
 [connection signal="body_entered" from="obj_Player/area_PlayerMaxRange" to="obj_Player" method="_on_area_player_max_range_body_entered"]
 [connection signal="body_exited" from="obj_Player/area_PlayerMaxRange" to="obj_Player" method="_on_area_player_max_range_body_exited"]

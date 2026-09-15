@@ -40,8 +40,7 @@ func GetInput():
 	
 func _process(delta: float) -> void:
 	if Globals.health <= 0:
-		Globals.won = false
-		get_tree().change_scene_to_file("res://scn_GameOverScreen.tscn")
+		Globals.LoseGame()
 		
 	GetInput()
 	move_and_slide()

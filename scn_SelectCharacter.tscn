@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://wduse8wsr3fk" path="res://Assets/Textures/Player/PlayerModelHandgun.png" id="5_ja5st"]
 [ext_resource type="Script" uid="uid://d3w65xebp0isa" path="res://Assets/Scripts/UI/scr_ChangeCharacter.gd" id="5_rmso6"]
 [ext_resource type="Texture2D" uid="uid://y10766y4o75n" path="res://Assets/Textures/Player/PlayerModelLongGun.png" id="6_rmso6"]
+[ext_resource type="Texture2D" uid="uid://ci0ernsewnev0" path="res://Assets/Textures/CurrencyIcon.png" id="9_wuad0"]
+[ext_resource type="Script" uid="uid://bcf68bkq2gfv" path="res://Assets/Scripts/UI/scr_CurrrencyLabel.gd" id="10_as5d2"]
 
 [node name="ScnSelectCharacter" type="PanelContainer" unique_id=2116532975]
 anchors_preset = 15
@@ -159,3 +161,24 @@ Health: High
 Movement speed: Medium
 
 Price: 25"
+
+[node name="mar_CurrencyContainer" type="MarginContainer" parent="." unique_id=775896665]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+
+[node name="hbox_CurrencyAligner" type="HBoxContainer" parent="mar_CurrencyContainer" unique_id=2003176403]
+layout_mode = 2
+
+[node name="tex_Icon" type="TextureRect" parent="mar_CurrencyContainer/hbox_CurrencyAligner" unique_id=1453811540]
+layout_mode = 2
+texture = ExtResource("9_wuad0")
+
+[node name="lbl_Currrency" type="Label" parent="mar_CurrencyContainer/hbox_CurrencyAligner" unique_id=735761115]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "x0"
+script = ExtResource("10_as5d2")
