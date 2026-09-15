@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://dxcq1ursg74ql"]
 
 [ext_resource type="Texture2D" uid="uid://wduse8wsr3fk" path="res://Assets/Textures/Player/PlayerModelHandgun.png" id="2_gmtvm"]
+[ext_resource type="Texture2D" uid="uid://c32gnr8dcg8r0" path="res://Assets/Textures/PinkSquareEnemy.png" id="3_k3k2v"]
 [ext_resource type="Script" uid="uid://bk27cbuoqwfmc" path="res://Assets/Scripts/Statmenu/scr_CharacterIcon.gd" id="3_nawh2"]
 [ext_resource type="Script" uid="uid://6n2aoo7dbirl" path="res://Assets/Scripts/Statmenu/scr_LabelXp.gd" id="4_01j26"]
+[ext_resource type="Texture2D" uid="uid://ckqqttiklu6q3" path="res://Assets/Textures/RedCircleEnemy.png" id="4_j5u5v"]
 [ext_resource type="Script" uid="uid://5cic6w7lgai5" path="res://Assets/Scripts/Statmenu/scr_LevelStatMenu.gd" id="4_nawh2"]
+[ext_resource type="Script" uid="uid://bg0g6yjxvtmtx" path="res://Assets/Scripts/Statmenu/scr_EnemiesKilled.gd" id="4_w0msq"]
 [ext_resource type="Script" uid="uid://bmnjpla37sicw" path="res://Assets/Scripts/Statmenu/scr_TotalXp.gd" id="5_01j26"]
+[ext_resource type="Texture2D" uid="uid://b0sfx4l13haf1" path="res://Assets/Textures/AquaTriangleEnemy.png" id="5_w0msq"]
 [ext_resource type="Script" uid="uid://dflb7c0hjima6" path="res://Assets/Scripts/UI/scr_LabelWaveCount.gd" id="6_pdr7g"]
+[ext_resource type="Script" uid="uid://b0uglmqvwhpdj" path="res://Assets/Scripts/Statmenu/scr_Stats.gd" id="11_w0msq"]
+[ext_resource type="Script" uid="uid://bh3ewm2sh5muv" path="res://Assets/Scripts/Statmenu/scr_WeaponsUnlocked.gd" id="12_4cv0o"]
 
 [sub_resource type="GDScript" id="GDScript_gmtvm"]
 script/source = "extends Control
@@ -17,12 +23,6 @@ script/source = "extends Control
 func _process(delta: float) -> void:
 	pass
 "
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jalkb"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6cw5p"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6pqxs"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0511e"]
 
@@ -100,34 +100,40 @@ alignment = 1
 custom_minimum_size = Vector2(50, 50)
 custom_maximum_size = Vector2(50, 50)
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_jalkb")
+texture = ExtResource("3_k3k2v")
 
 [node name="lbl_squaresKilled" type="Label" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1843650570]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 text = "100"
+script = ExtResource("4_w0msq")
+shape = "square"
 
 [node name="img_circle" type="TextureRect" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1235822772]
 custom_minimum_size = Vector2(50, 50)
 custom_maximum_size = Vector2(50, 50)
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_6cw5p")
+texture = ExtResource("4_j5u5v")
 
 [node name="lbl_circlesKilled" type="Label" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=932841268]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 text = "40"
+script = ExtResource("4_w0msq")
+shape = "circle"
 
 [node name="img_triangle" type="TextureRect" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=992601952]
 custom_minimum_size = Vector2(50, 50)
 custom_maximum_size = Vector2(50, 50)
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_6pqxs")
+texture = ExtResource("5_w0msq")
 
 [node name="lbl_trianglesKilled" type="Label" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1108585298]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 text = "230"
+script = ExtResource("4_w0msq")
+shape = "triangle"
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer/gameStats_MarginContainer/VBoxContainer2" unique_id=1158684173]
 custom_minimum_size = Vector2(300, 300)
@@ -272,45 +278,21 @@ layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="VBox_stats" type="VBoxContainer" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades" unique_id=1541593792]
+[node name="VBox_Stats" type="VBoxContainer" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades" unique_id=1541593792]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="lbl_stats" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=253276740]
+[node name="lbl_Stats" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_Stats" unique_id=253276740]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Stats"
+text = "Stat modifiers"
 horizontal_alignment = 1
 
-[node name="lbl_baseHealth" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=2068014446]
+[node name="lbl_AllStats" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_Stats" unique_id=2068014446]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Base health: "
-
-[node name="lbl_health" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=1880918113]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Actual health:"
-
-[node name="lbl_damage" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=2129294696]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Damage modifier:"
-
-[node name="lbl_attackSpeed" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=572869504]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Attack speed:"
-
-[node name="lbl_movementSpeed" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=341573022]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Movement speed:"
-
-[node name="lbl_regen" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_stats" unique_id=1786121065]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Health regen:"
+text = "Health: "
+script = ExtResource("11_w0msq")
 
 [node name="VBox_weapons" type="VBoxContainer" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades" unique_id=1724747931]
 layout_mode = 2
@@ -326,6 +308,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Starting weapon:"
+script = ExtResource("12_4cv0o")
 
 [node name="Label" type="Label" parent="HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2" unique_id=1763961211]
 layout_mode = 2

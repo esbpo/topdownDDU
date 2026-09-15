@@ -12,9 +12,7 @@ var weaponsAvailable
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	upgradeDict = JSON.parse_string(UpgradeJson)
-	upgradesAvailable = len(upgradeDict)
 	weaponUnlockDict = JSON.parse_string(WeaponUnlockJson)
-	weaponsAvailable = len(weaponUnlockDict)
 	
 
 func ShowUpgrades(): 

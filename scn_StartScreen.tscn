@@ -39,12 +39,12 @@ script = ExtResource("1_fy8el")
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 46
 theme_override_styles/normal = ExtResource("1_3y1ja")
 theme_override_styles/pressed = ExtResource("2_rbdih")
 theme_override_styles/hover = ExtResource("3_v8qnv")
 action_mode = 0
-text = "Settings"
+text = "Select Character"
 script = ExtResource("6_um8j4")
 
 [node name="btn_Exit" type="Button" parent="VBoxContainer" unique_id=552443187]

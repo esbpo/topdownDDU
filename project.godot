@@ -13,7 +13,10 @@ config_version=5
 config/name="TopDownRoguelike"
 run/main_scene="uid://cfbrqwyujf0hv"
 config/features=PackedStringArray("4.7", "Forward Plus")
+boot_splash/stretch_mode=4
+boot_splash/image="uid://cs8lyfionq8nt"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=1500
 
 [autoload]
 
@@ -23,6 +26,7 @@ Globals="*uid://dic2bf1g6fyx0"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
