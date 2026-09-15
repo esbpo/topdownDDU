@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://bk27cbuoqwfmc" path="res://Assets/Scripts/Statmenu/scr_CharacterIcon.gd" id="3_nawh2"]
 [ext_resource type="Script" uid="uid://6n2aoo7dbirl" path="res://Assets/Scripts/Statmenu/scr_LabelXp.gd" id="4_01j26"]
 [ext_resource type="Script" uid="uid://5cic6w7lgai5" path="res://Assets/Scripts/Statmenu/scr_LevelStatMenu.gd" id="4_nawh2"]
-[ext_resource type="Script" uid="uid://bmnjpla37sicw" path="res://Assets/Scripts/Statmenu/lbl_TotalXp.gd" id="5_01j26"]
-[ext_resource type="Script" uid="uid://bp6li6shfmqwc" path="res://lbl_Wave.gd" id="6_pdr7g"]
+[ext_resource type="Script" uid="uid://bmnjpla37sicw" path="res://Assets/Scripts/Statmenu/scr_TotalXp.gd" id="5_01j26"]
+[ext_resource type="Script" uid="uid://dflb7c0hjima6" path="res://Assets/Scripts/UI/scr_LabelWaveCount.gd" id="6_pdr7g"]
 
 [sub_resource type="GDScript" id="GDScript_gmtvm"]
 script/source = "extends Control
