@@ -10,8 +10,7 @@
 		"lifetime": 1,
 		"texture": null,
 		"bulletamount": 1,
-		"bulletspread": 0,
-		"dict": "weapon"
+		"bulletspread": 0
 	},
 	{
 		"id": 1,
@@ -24,8 +23,7 @@
 		"lifetime": 1,
 		"texture": null,
 		"bulletamount": 1,
-		"bulletspread": 0,
-		"dict": "weapon"
+		"bulletspread": 0
 	},
 	{
 		"id": 2,
@@ -38,8 +36,7 @@
 		"lifetime": 1,
 		"texture": null,
 		"bulletamount": 1,
-		"bulletspread": 0,
-		"dict": "weapon"
+		"bulletspread": 0
 	},
 	{
 		"id": 3,
@@ -52,8 +49,7 @@
 		"lifetime": 1,
 		"texture": null,
 		"bulletamount": 10,
-		"bulletspread": 0.4363323,
-		"dict": "weapon"
+		"bulletspread": 0.4363323
 	},
 	{
 		"id": 4,
@@ -66,8 +62,7 @@
 		"lifetime": 0.2,
 		"texture": null,
 		"bulletamount": 1,
-		"bulletspread": 0,
-		"dict": "weapon"
+		"bulletspread": 0
 	},
 	{
 		"id": 5,
@@ -80,8 +75,6 @@
 		"lifetime": 0.5,
 		"texture": null,
 		"bulletamount": 1,
-		"bulletspread": 0.35,
-		"dict": "weapon"
-		
+		"bulletspread": 0.35
 	},
 ]
