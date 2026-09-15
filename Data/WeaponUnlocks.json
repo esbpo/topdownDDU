@@ -26,4 +26,22 @@
 		"description": "Unlocks shotgun",
 		"icon": "res://Assets/Textures/Upgrade/AbilityUpgradeBackground.png"
 	},
+	"3":{
+		"id": "3",
+		"title": "Laser",
+		"weapon_id": 4,
+		"level": 0,
+		"maxlevel": 1,
+		"description": "Unlocks laser",
+		"icon": "res://Assets/Textures/Upgrade/AbilityUpgradeBackground.png"
+	},
+	"4":{
+		"id": "4",
+		"title": "Flamethrower",
+		"weapon_id": 5,
+		"level": 0,
+		"maxlevel": 1,
+		"description": "Unlocks flamethrower",
+		"icon": "res://Assets/Textures/Upgrade/AbilityUpgradeBackground.png"
+	},
 }
