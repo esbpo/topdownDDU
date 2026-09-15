@@ -1,5 +1,9 @@
 extends Label
 
+func StoreData():
+	var health_over_time = FileAccess.open("user://health_over_time.csv", FileAccess.WRITE)
+	
+
 func _ready() -> void:
 	if Globals.won:
 		text = "You Win"
