@@ -14,7 +14,7 @@ var time = 0
 var wave = 1
 var enemies_left = 0
 var level = 0
-var starter_weapon = 2 #id på starterweapon
+var starter_weapon = 1 #id på starterweapon
 var speed = 300
 
 #Stat menu variables
