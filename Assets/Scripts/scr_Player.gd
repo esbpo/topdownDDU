@@ -59,10 +59,16 @@ func _process(delta: float) -> void:
 	GetInput()
 	move_and_slide()
 
+	# diff is used to count when one second has passed and adds health regen to health
+	#var diff = 0.0
 	# Regenerate lost health
-	if Globals.health < Globals.max_health:
-		Globals.health += Globals.add_health_regen * delta
-
+	# If diff is over 1.0, meaning one second has passed. Add health regen to health and reset diff
+	#if Globals.health < Globals.max_health:
+	#	diff += delta
+	#	if diff >= 1.0:
+	#		Globals.health += Globals.add_health_regen
+	#		diff = 0
+			
 	# Shooting system
 	var i = 0
 	for interval in shootingIntervals:
