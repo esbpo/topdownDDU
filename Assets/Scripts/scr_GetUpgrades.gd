@@ -28,15 +28,18 @@ func Upgrade():
 			upgradeChoices[0] = whatDict.keys().pick_random()
 		while (upgradeChoices[1] == upgradeChoices[0] or upgradeChoices[1] == upgradeChoices[2]):
 			upgradeChoices[1] = whatDict.keys().pick_random()
-		# Sets metadata to upgradechoices
+		
 		
 		
 	# If there are less than 3 upgrades available in whatDict, 
 	# Check how many are left in whatDict
 	else:
 		whatDict = _extend(whatDict, otherDict)
-		# If there are 2 upgrades left in whatDict, pull last upgrade from otherDict
-		
+		while (upgradeChoices[0] == upgradeChoices[1] or upgradeChoices[0] == upgradeChoices[2]):
+			upgradeChoices[0] = whatDict.keys().pick_random()
+		while (upgradeChoices[1] == upgradeChoices[0] or upgradeChoices[1] == upgradeChoices[2]):
+			upgradeChoices[1] = whatDict.keys().pick_random()
+			
 	upgrade1.set_meta("Data", whatDict[upgradeChoices[0]])
 	upgrade2.set_meta("Data", whatDict[upgradeChoices[1]])
 	upgrade3.set_meta("Data", whatDict[upgradeChoices[2]])
