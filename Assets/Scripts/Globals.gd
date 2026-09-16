@@ -7,35 +7,35 @@ var unlocked_characters: Array = [0]
 # Player texture filepath
 var player_skin: String = "res://Assets/Textures/Player/PlayerModelHandgun.png"
 
-var max_health = 750
-var health = 750
-var xp = 0
-var time = 0
-var wave = 1
-var enemies_left = 0
-var level = 0
-var starter_weapon = 0 # 0 = Id på starterweapon
-var speed = 300
+var max_health: int = 750
+var health: int = 750
+var xp: int = 0
+var time: float = 0
+var wave: int = 1
+var enemies_left: int = 0
+var level: int = 0
+var starter_weapon: int = 0 # 0 = Id på starterweapon
+var speed: int = 300
 
 #Stat menu variables
-var totalXp = 0
-var enemies_killed = {"square":0, "circle":0, "triangle":0}
+var totalXp: int = 0
+var enemies_killed: Dictionary = {"square":0, "circle":0, "triangle":0}
 
 #Upgrade variables
-var damage_multiplier = 1 			#Damage multiplier, adds 0.2 or 20% per level on the multiplier
-var base_health = 0 				#Additional base health. adds 100 base health pr level of upgrade
-var health_multiplier = 1 			#Health multiplier, adds 0.25 or 25% per level to multiplier
-var attack_speed_multiplier = 1		#Attack speed multiplier, adds 0.1 or 10% pr. level to multiplier
-var movement_speed_multiplier = 1 	#Movement speed multiplier, adds 0.15 or 15% pr. upgrade level
-var add_health_regen = 0 			#Health regen, add +5 health regen pr. level. max level = 3
+var damage_multiplier: float = 1 			# Damage multiplier, adds 0.2 or 20% per level on the multiplier
+var base_health: int = 0 					# Additional base health. adds 100 base health pr level of upgrade
+var health_multiplier: float = 1 			# Health multiplier, adds 0.25 or 25% per level to multiplier
+var attack_speed_multiplier: float = 1		# Attack speed multiplier, adds 0.1 or 10% pr. level to multiplier
+var movement_speed_multiplier: float = 1 	# Movement speed multiplier, adds 0.15 or 15% pr. upgrade level
+var add_health_regen: int = 0 				# Health regen, add +5 health regen pr. level. max level = 3
 
 # Data collection
-var health_over_time = []
-var enemies_killed_per_level = []
-var upgrades = []
-var level_gained = false
-var intermittent_enemies_killed = 0
-var upgrades_over_time = []
+var health_over_time: Array = []
+var enemies_killed_per_level: Array = []
+var upgrades: Array = []
+var level_gained: bool = false
+var intermittent_enemies_killed: int = 0
+var upgrades_over_time: Array = []
 
 func WinGame():
 	won = true
