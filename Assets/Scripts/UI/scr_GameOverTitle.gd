@@ -22,7 +22,7 @@ func StoreData():
 	for key in Globals.enemies_killed.keys():
 		enemies_killed_total += Globals.enemies_killed[key]
 		
-	var misc_data = [Globals.time, enemies_killed_total, Globals.won, Globals.level, Globals.starter_weapon, Globals.totalXp, Globals.wave]
+	var misc_data = [round(Globals.time), enemies_killed_total, Globals.won, Globals.level, Globals.starter_weapon, Globals.totalXp, Globals.wave]
 	misc.store_csv_line(misc_data)
 	
 func _ready() -> void:
