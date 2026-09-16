@@ -21,24 +21,18 @@ func Upgrade():
 	else:
 		whatDict = parent.upgradeDict
 		otherDict = parent.weaponUnlockDict
-	var upgradeChoices = [whatDict.keys().pick_random(),whatDict.keys().pick_random(),whatDict.keys().pick_random()]
+	
 	if len(whatDict) >= 3: #As long as there are 3 or more upgrades not at max level, make all 3 upgrades different.
-		#While two of the upgradechoices are the same, choose a new upgrade from that dict
-		while (upgradeChoices[0] == upgradeChoices[1] or upgradeChoices[0] == upgradeChoices[2]):
-			upgradeChoices[0] = whatDict.keys().pick_random()
-		while (upgradeChoices[1] == upgradeChoices[0] or upgradeChoices[1] == upgradeChoices[2]):
-			upgradeChoices[1] = whatDict.keys().pick_random()
-		
-		
-		
+		pass
 	# If there are less than 3 upgrades available in whatDict, 
 	# Check how many are left in whatDict
 	else:
 		whatDict = _extend(whatDict, otherDict)
-		while (upgradeChoices[0] == upgradeChoices[1] or upgradeChoices[0] == upgradeChoices[2]):
-			upgradeChoices[0] = whatDict.keys().pick_random()
-		while (upgradeChoices[1] == upgradeChoices[0] or upgradeChoices[1] == upgradeChoices[2]):
-			upgradeChoices[1] = whatDict.keys().pick_random()
+	var upgradeChoices = [whatDict.keys().pick_random(),whatDict.keys().pick_random(),whatDict.keys().pick_random()]
+	while (upgradeChoices[0] == upgradeChoices[1] or upgradeChoices[0] == upgradeChoices[2]):
+		upgradeChoices[0] = whatDict.keys().pick_random()
+	while (upgradeChoices[1] == upgradeChoices[0] or upgradeChoices[1] == upgradeChoices[2]):
+		upgradeChoices[1] = whatDict.keys().pick_random()
 			
 	upgrade1.set_meta("Data", whatDict[upgradeChoices[0]])
 	upgrade2.set_meta("Data", whatDict[upgradeChoices[1]])
