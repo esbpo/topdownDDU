@@ -11,7 +11,7 @@ var data
 # Refers to the statmenus gridcontainer that shows what upgrades were picked
 @onready var upgradesPicked = $"/root/Node2D/can_StatMenu/scn_StatMenu/HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid"
 # Refers to weapons unlocked in stat menu
-@onready var weaponsUnlocked = $"Node2D/can_StatMenu/scn_StatMenu/HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_weapons/lbl_weaponsUnlocked"
+@onready var weaponsUnlocked = $"/root/Node2D/can_StatMenu/scn_StatMenu/HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_weapons/lbl_weaponsUnlocked"
 func _ready() -> void: # Placeholder for testing layout
 	title.text = "Bonk" 
 	image.texture = PlaceholderTexture2D.new()

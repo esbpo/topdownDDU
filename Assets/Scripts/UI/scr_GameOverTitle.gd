@@ -32,17 +32,32 @@ func _ready() -> void:
 		text = "Game Over"
 		
 	StoreData()
+	# Add currency
 	Globals.currency += Globals.wave - 1
+	
+	# Reset game variables
 	Globals.wave = 1
 	Globals.health = Globals.max_health
 	Globals.enemies_left = 0
+	Globals.level = 0
+	Globals.time = 0
+	Globals.xp = 0
+	Globals.won = false
+	
+	# Reset upgrade variables
 	Globals.damage_multiplier = 1
 	Globals.base_health = 0
 	Globals.health_multiplier = 1
 	Globals.attack_speed_multiplier = 1
 	Globals.movement_speed_multiplier = 1
 	Globals.add_health_regen = 0
-	Globals.level = 0
-	Globals.time = 0
-	Globals.xp = 0
-	Globals.won = false
+	
+	# Reset tracking variables
+	Globals.health_over_time = []
+	Globals.enemies_killed_per_level = []
+	Globals.upgrades = []
+	Globals.level_gained = false
+	Globals.intermittent_enemies_killed = 0
+	Globals.upgrades_over_time = []
+	Globals.totalXp = 0
+	Globals.enemies_killed = {"square":0, "circle":0, "triangle":0}
