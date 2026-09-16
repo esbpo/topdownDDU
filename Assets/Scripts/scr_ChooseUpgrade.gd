@@ -10,8 +10,8 @@ var data
 @onready var levelStars = $"VBoxContainer/MarginContainer_level/HBoxContainer"
 # Refers to the statmenus gridcontainer that shows what upgrades were picked
 @onready var upgradesPicked = $"/root/Node2D/can_StatMenu/scn_StatMenu/HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/chosenUpgrades_Grid"
-# Refers to scr_GetUpgrades to acces whatDict
-
+# Refers to weapons unlocked in stat menu
+@onready var weaponsUnlocked = $"Node2D/can_StatMenu/scn_StatMenu/HBoxContainer/PanelContainer2/characterStats_MarginContainer/VBoxContainer2/MarginContainer/HBox_upgrades/VBox_weapons/lbl_weaponsUnlocked"
 func _ready() -> void: # Placeholder for testing layout
 	title.text = "Bonk" 
 	image.texture = PlaceholderTexture2D.new()
@@ -71,25 +71,30 @@ func _pressed():
 			"weapon_id":
 				$"/root/Node2D/obj_Player".Equip(data[key])
 				break
+	
 	var upgradeBox = VBoxContainer.new()
+	var titleContainer = MarginContainer.new()
 	var upgradeTitle = Label.new()
 	var upgradeIcon = TextureRect.new()
 	
-	upgradeTitle.text = str(data["title"])
-	upgradeIcon.texture = load(data["icon"])
-	
 	# Set specific sizes for objects to align properly in grid
 	upgradeBox.custom_maximum_size = Vector2(50,65)
-	upgradeTitle.custom_maximum_size = Vector2(50,15)
+	upgradeBox.custom_minimum_size = Vector2(50,65)
+	titleContainer.custom_maximum_size = Vector2(50,15)
+	titleContainer.custom_minimum_size = Vector2(50,15)
 	upgradeIcon.custom_maximum_size = Vector2(50,50)
 	
-	upgradeTitle.add_theme_font_size_override("fontsize",15) # Sets font size to 15 so text shows
-	
+	upgradeTitle.add_theme_font_size_override("font_size",15) # Sets font size to 15 so text shows
+	upgradeTitle.size_flags_horizontal = Label.SIZE_EXPAND_FILL
+	upgradeTitle.size_flags_vertical = Label.SIZE_EXPAND_FILL
 	# Adds the three objects as parents under either gridcontainer og newly created VBoxContainer
 	upgradesPicked.add_child(upgradeBox)
-	upgradeBox.add_child(upgradeTitle)
-	#upgradeBox.add_child(upgradeIcon)
+	upgradeBox.add_child(titleContainer)
+	titleContainer.add_child(upgradeTitle)
+	upgradeBox.add_child(upgradeIcon)
 	
+	upgradeTitle.text = data["title"]
+	upgradeIcon.texture = load(data["icon"])
 	
 	
 	$"../../../..".HideUpgrades()
