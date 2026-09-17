@@ -29,5 +29,6 @@ texture = SubResource("PlaceholderTexture2D_5fml3")
 
 [node name="col_Area" type="CollisionShape2D" parent="area_Collide" unique_id=1570204766]
 shape = SubResource("CapsuleShape2D_wn6d8")
+debug_color = Color(0.8896235, 0.00026414156, 0.7971445, 0.41960785)
 
 [connection signal="body_entered" from="area_Collide" to="." method="_on_body_entered"]

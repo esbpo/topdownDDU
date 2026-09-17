@@ -15,11 +15,15 @@ func LoadSelf() -> void:
 	lifetime = data["lifetime"]
 	damage = data["damage"]
 	movement = data["movement"]
-	texture = data["texture"] if "texture" in data.keys() else texture
+	texture = data["texture"]
 	width = data["width"]
 	height = data["height"]
 	spawn = data["spawn"]
 	spawn_data = data["spawn_data"]
+	
+	$spr_Bullet.texture = texture
+	var sprScale = Vector2(2./texture.get_width(), 2./texture.get_height())
+	$spr_Bullet.scale = sprScale
 	
 	contact_monitor = true
 	max_contacts_reported = 1

@@ -77,8 +77,9 @@ func _process(delta: float) -> void:
 			if interval >= 1 / (firerates[i] * Globals.attack_speed_multiplier):
 				var weapon = weapons[i]
 				var damage = weapon["damage"] * Globals.damage_multiplier
+				var texture = weapon["texture"] if weapon["texture"] != null else "res://Assets/Textures/BasicBullet.png"
 				# Shoot the weapon
-				_shoot(weapon["type"], null, weapon["bulletspeed"], damage, weapon["lifetime"], weapon["width"], weapon["height"], weapon["bulletamount"], weapon["bulletspread"])
+				_shoot(weapon["type"], null, weapon["bulletspeed"], damage, weapon["lifetime"], weapon["width"], weapon["height"], weapon["bulletamount"], weapon["bulletspread"], null, {}, texture)
 				shootingIntervals[i] = 0
 
 		# Shoot the target if one exists and mouse is not pressed, otherwise point at cursor
@@ -89,8 +90,9 @@ func _process(delta: float) -> void:
 			if interval >= 1 / (firerates[i] * Globals.attack_speed_multiplier):
 				var weapon = weapons[i]
 				var damage = weapon["damage"] * Globals.damage_multiplier
+				var texture = weapon["texture"] if weapon["texture"] != null else "res://Assets/Textures/BasicBullet.png"
 				# Shoot the weapon
-				_shoot(weapon["type"], target, weapon["bulletspeed"], damage, weapon["lifetime"], weapon["width"], weapon["height"], weapon["bulletamount"], weapon["bulletspread"])
+				_shoot(weapon["type"], target, weapon["bulletspeed"], damage, weapon["lifetime"], weapon["width"], weapon["height"], weapon["bulletamount"], weapon["bulletspread"], null, {}, texture)
 				shootingIntervals[i] = 0
 		else:
 			var mouse_position = get_global_mouse_position()
@@ -101,17 +103,18 @@ func _process(delta: float) -> void:
 	
 func _shoot(bulletScene: PackedScene, bulletTarget: PhysicsBody2D, bulletSpeed: float, 
 			damage: float, lifetime: float, width: float, height: float, bulletAmount: int, bulletSpread: float, 
-			spawn: PackedScene=null, spawn_data: Dictionary={}):
+			spawn: PackedScene=null, spawn_data: Dictionary={}, bulletTexture: String="res://Assets/Textures/BasicBullet.png"):
 	
 	var bulletData: Dictionary = {
 		"damage": damage,
 		"lifetime": lifetime,
 		"width": width,
 		"height": height,
-		"texture": load("res://Assets/Resources/UI/res_BaseBulletTexture.tres"),
+		"texture": load(bulletTexture),
 		"spawn": spawn,
 		"spawn_data": spawn_data,
 	}
+	
 	for j in range(bulletAmount):
 		var bulletInstance: RigidBody2D = bulletScene.instantiate()
 		var bulletAngle: float

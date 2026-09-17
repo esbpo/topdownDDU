@@ -15,7 +15,7 @@
 		"level": 0,
 		"maxlevel": 1,
 		"description": "Unlocks assault rifle",
-		"icon": "res://Assets/Textures/Upgrade/AbilityUpgradeBackground.png"
+		"icon": "res://Assets/Textures/Upgrade/AssaultRifleUpgrade.png"
 	},
 	"2":{
 		"id": "2",
