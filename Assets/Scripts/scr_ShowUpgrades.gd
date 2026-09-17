@@ -14,6 +14,14 @@ func _ready() -> void:
 	upgradeDict = JSON.parse_string(UpgradeJson)
 	weaponUnlockDict = JSON.parse_string(WeaponUnlockJson)
 	
+	for weapon in weaponUnlockDict.keys():
+		var d = weaponUnlockDict[weapon]
+		if d["id"] == str(int(Globals.starter_weapon)):
+			d["level"] = 1
+			weaponUnlockDict.erase(weapon)
+		else:
+			d["level"] = 0
+	
 
 func ShowUpgrades(): 
 	instance = scene.instantiate()

@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
 		
 	dataCnt += delta
 	if dataCnt >= 1:
-		Globals.health_over_time.append(Globals.health)
+		Globals.health_over_time.append(roundi(Globals.health))
 		if Globals.level_gained:
 			Globals.upgrades_over_time.append(Globals.upgrades[-1])
 			Globals.enemies_killed_per_level.append(Globals.intermittent_enemies_killed)
@@ -59,15 +59,9 @@ func _process(delta: float) -> void:
 	GetInput()
 	move_and_slide()
 
-	# diff is used to count when one second has passed and adds health regen to health
-	#var diff = 0.0
 	# Regenerate lost health
-	# If diff is over 1.0, meaning one second has passed. Add health regen to health and reset diff
-	#if Globals.health < Globals.max_health:
-	#	diff += delta
-	#	if diff >= 1.0:
-	#		Globals.health += Globals.add_health_regen
-	#		diff = 0
+	if Globals.health < Globals.max_health:
+		Globals.health += Globals.add_health_regen * delta # Regenerates health (do not modify)
 			
 	# Shooting system
 	var i = 0

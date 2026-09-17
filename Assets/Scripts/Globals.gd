@@ -8,7 +8,7 @@ var unlocked_characters: Array = [0]
 var player_skin: String = "res://Assets/Textures/Player/PlayerModelHandgun.png"
 
 var max_health: int = 750
-var health: int = 750
+var health: float = 750
 var xp: int = 0
 var time: float = 0
 var wave: int = 1
