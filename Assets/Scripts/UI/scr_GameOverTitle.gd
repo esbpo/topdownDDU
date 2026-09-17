@@ -1,22 +1,17 @@
 extends Label
 
+func EnsureDir(dirpath):
+	if not DirAccess.dir_exists_absolute(dirpath):
+		DirAccess.make_dir_absolute(dirpath)
+
 func StoreData():
 	var userId = str(randi())
 	
-	if not DirAccess.dir_exists_absolute("user://savedata"):
-		DirAccess.make_dir_absolute("user://savedata")
-	
-	if not DirAccess.dir_exists_absolute("user://savedata/hot"):
-		DirAccess.make_dir_absolute("user://savedata/hot")
-	
-	if not DirAccess.dir_exists_absolute("user://savedata/uot"):
-		DirAccess.make_dir_absolute("user://savedata/uot")
-	
-	if not DirAccess.dir_exists_absolute("user://savedata/epl"):
-		DirAccess.make_dir_absolute("user://savedata/epl")
-	
-	if not DirAccess.dir_exists_absolute("user://savedata/misc"):
-		DirAccess.make_dir_absolute("user://savedata/misc")
+	EnsureDir("user://savedata")
+	EnsureDir("user://savedata/hot")
+	EnsureDir("user://savedata/uot")
+	EnsureDir("user://savedata/epl")
+	EnsureDir("user://savedata/misc")
 	
 	var hot_path = "user://savedata/hot/" + userId + "health_over_time.csv"
 	var hot = FileAccess.open(hot_path, FileAccess.WRITE)
