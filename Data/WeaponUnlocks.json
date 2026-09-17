@@ -1,6 +1,15 @@
 {
 	"0":{
 		"id": "0",
+		"title": "Pistol",
+		"weapon_id": 0,
+		"level": 0,
+		"maxlevel": 1,
+		"description": "Unlocks pistol",
+		"icon": "res://Assets/Textures/Upgrade/AbilityUpgradeBackground.png"
+	},
+	"1":{
+		"id": "1",
 		"title": "Assault rifle",
 		"weapon_id": 1,
 		"level": 0,
@@ -8,8 +17,8 @@
 		"description": "Unlocks assault rifle",
 		"icon": "res://Assets/Textures/Upgrade/AbilityUpgradeBackground.png"
 	},
-	"1":{
-		"id": "1",
+	"2":{
+		"id": "2",
 		"title": "Sniper",
 		"weapon_id": 2,
 		"level": 0,
@@ -17,8 +26,8 @@
 		"description": "Unlocks Sniper rifle",
 		"icon": "res://Assets/Textures/Upgrade/AbilityUpgradeBackground.png"
 	},
-	"2":{
-		"id": "2",
+	"3":{
+		"id": "3",
 		"title": "Shotgun",
 		"weapon_id": 3,
 		"level": 0,
@@ -26,8 +35,8 @@
 		"description": "Unlocks shotgun",
 		"icon": "res://Assets/Textures/Upgrade/AbilityUpgradeBackground.png"
 	},
-	"3":{
-		"id": "3",
+	"4":{
+		"id": "4",
 		"title": "Laser",
 		"weapon_id": 4,
 		"level": 0,
@@ -35,8 +44,8 @@
 		"description": "Unlocks laser",
 		"icon": "res://Assets/Textures/Upgrade/AbilityUpgradeBackground.png"
 	},
-	"4":{
-		"id": "4",
+	"5":{
+		"id": "5",
 		"title": "Flamethrower",
 		"weapon_id": 5,
 		"level": 0,

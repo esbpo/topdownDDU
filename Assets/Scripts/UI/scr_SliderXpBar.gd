@@ -10,7 +10,7 @@ func _process(_delta: float) -> void:
 
 	if value >= max_value:
 		value -= max_value
-		Globals.xp -= max_value
+		Globals.xp -= roundi(max_value)
 		Globals.level += 1
 		max_value = GetXpCost(Globals.level)
 		max_value = round(max_value)

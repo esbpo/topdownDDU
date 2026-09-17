@@ -8,13 +8,13 @@ var unlocked_characters: Array = [0]
 var player_skin: String = "res://Assets/Textures/Player/PlayerModelHandgun.png"
 
 var max_health: int = 750
-var health: int = 750
+var health: float = 750
 var xp: int = 0
 var time: float = 0
 var wave: int = 1
 var enemies_left: int = 0
 var level: int = 0
-var starter_weapon: int = 0 # 0 = Id på starterweapon
+var starter_weapon: int = 1 # 0 = Id på starterweapon
 var speed: int = 300
 
 #Stat menu variables
