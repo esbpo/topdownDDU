@@ -73,6 +73,7 @@ func SpawnGroup(enemyId: int, enemyCount: int):
 
 # Function to spawn a wave of enemies
 func SpawnWave(waveNumber):
+	Globals.wave += 1
 	var wave = waves[waveNumber]
 	for i in range(len(wave)):
 		SpawnGroup(wave[i][0], wave[i][1])
@@ -87,6 +88,3 @@ func _process(delta: float) -> void:
 		Globals.enemies_left += enemiesMax
 		if waveCount < len(waves) - 1:
 			waveCount += 1
-			Globals.wave += 1
-	
-	
