@@ -42,7 +42,7 @@
 		"level": 0,
 		"maxlevel": 1,
 		"description": "Unlocks laser",
-		"icon": "res://Assets/Textures/Upgrade/AbilityUpgradeBackground.png"
+		"icon": "res://Assets/Textures/Upgrade/LaserUpgrade.png"
 	},
 	"5":{
 		"id": "5",
