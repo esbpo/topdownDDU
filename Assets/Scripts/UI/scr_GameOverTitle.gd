@@ -31,7 +31,7 @@ func StoreData():
 	var enemies_killed_total = 0
 	for key in Globals.enemies_killed.keys():
 		enemies_killed_total += Globals.enemies_killed[key]
-		
+	
 	var misc_data = [roundi(Globals.time), enemies_killed_total, Globals.won, Globals.level, Globals.starter_weapon, roundi(Globals.totalXp), Globals.wave]
 	misc.store_csv_line(misc_data)
 	
@@ -47,6 +47,7 @@ func _ready() -> void:
 	
 	# Reset game variables
 	Globals.wave = 1
+	Globals.max_health = Globals.base_max_health
 	Globals.health = Globals.max_health
 	Globals.enemies_left = 0
 	Globals.level = 0

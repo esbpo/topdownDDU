@@ -37,6 +37,7 @@ func _pressed() -> void:
 	if weapon in Globals.unlocked_characters:
 		Globals.speed = speed
 		Globals.max_health = health
+		Globals.base_max_health = health
 		Globals.health = Globals.max_health
 		Globals.starter_weapon = weapon
 		Globals.player_skin = skin
